@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "What Makes Clarity Keyboard Tick?<br/> Clojure!"
+title: "What Makes Clarity Keyboard Tick? Clojure!"
 description: ""
-comments: true
 tags: [clojure, clarity, programming, swiftkey, android, keyboard, ime, java, lein-droid, async]
 authors: [ben, adam]
-
 ---
 
 <img style="width:250px;float:right;shape-outside:circle();" src="https://blog.swiftkey.com/content/uploads/2015/05/ClarityLogo.png" alt="Clarity logo"/>

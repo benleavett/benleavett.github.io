@@ -4,12 +4,10 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Native of the English Lake District, lover of mountains, history and technology.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Whilst in the UK I lived in Bristol (4y) and South London (9y). Recently moved to Seattle, US.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+You can find me on Facebook or LinkedIn.
