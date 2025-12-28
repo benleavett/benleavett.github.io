@@ -1,0 +1,7 @@
+# Hugo build artifacts
+public/
+resources/
+.hugo_build.lock
+
+# macOS files
+.DS_Store
