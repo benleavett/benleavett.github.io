@@ -1,0 +1,126 @@
+{{ define "main" }}
+<div class="scroll-container">
+  <!-- Section 1 -->
+  <section class="scroll-section section-1">
+    <div class="section-content">
+      <h1>{{ .Site.Title }}</h1>
+      <p class="tagline">{{ .Params.tagline | default "Welcome to our site" }}</p>
+    </div>
+  </section>
+
+  <!-- Section 2 -->
+  <section class="scroll-section section-2">
+    <div class="section-content">
+      <h2>{{ .Params.section2_title | default "What We Do" }}</h2>
+      <p>{{ .Params.section2_content | default "Your content here" }}</p>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section class="scroll-section section-3">
+    <div class="section-content">
+      <h2>{{ .Params.section3_title | default "Get in Touch" }}</h2>
+      <p>{{ .Params.section3_content | default "Contact information here" }}</p>
+    </div>
+  </section>
+</div>
+
+<style>
+  /* Reset any theme styles that might interfere */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  .scroll-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .section-content {
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+  }
+
+  .section-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .section-1 h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .section-1 .tagline {
+    font-size: 1.5rem;
+    opacity: 0.9;
+  }
+
+  .section-2 {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+  }
+
+  .section-2 h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-2 p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+
+  .section-3 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+  }
+
+  .section-3 h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-3 p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .section-1 h1 {
+      font-size: 2.5rem;
+    }
+
+    .section-1 .tagline {
+      font-size: 1.25rem;
+    }
+
+    .section-2 h2,
+    .section-3 h2 {
+      font-size: 2rem;
+    }
+
+    .section-2 p,
+    .section-3 p {
+      font-size: 1rem;
+    }
+  }
+</style>
+{{ end }}

@@ -1,29 +1,10 @@
 ---
-title: "Welcome to Blowfish! :tada:"
-description: "This page was built using the Blowfish theme for Hugo."
+title: "My Company"
+tagline: "Building amazing things"
+section2_title: "What We Do"
+section2_content: "We create innovative solutions that make a difference. Our team is dedicated to delivering excellence in everything we do."
+section3_title: "Get in Touch"
+section3_content: "Ready to work together? We'd love to hear from you. Visit our About page to learn more."
 ---
-
-
-<div class="flex px-4 py-2 mb-8 text-base rounded-md bg-primary-100 dark:bg-primary-900">
-  <span class="flex items-center pe-3 text-primary-400">
-    {{< icon "triangle-exclamation" >}}
-  </span>
-  <span class="flex items-center justify-between grow dark:text-neutral-300">
-    <span class="prose dark:prose-invert">This is a demo of the <code id="layout">background</code> layout.</span>
-    <button
-      id="switch-layout-button"
-      class="px-4 mx-[3px] !text-neutral !no-underline rounded-md bg-primary-600 hover:!bg-primary-500 dark:bg-primary-800 dark:hover:!bg-primary-700"
-    >
-      Switch layout &orarr;
-    </button>
-  </span>
-</div>
-
-
-```shell
-npx blowfish-tools
-```  
-
-{{< youtubeLite id="SgXhGb-7QbU" label="Blowfish-tools demo" >}}
 
 
