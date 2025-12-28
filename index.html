@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadence</title>
+  <meta name="description" content="A mobile product practice built on rhythm, clarity, and dependable craft.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'DejaVu Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    }
+
+    /* Navigation */
+    .nav-bar {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      z-index: 1000;
+    }
+
+    .nav-link {
+      color: #f5f5f0;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid rgba(245, 245, 240, 0.3);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(245, 245, 240, 0.1);
+      border-color: rgba(245, 245, 240, 0.5);
+    }
+
+    .scroll-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .scroll-section {
+      height: 100vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .section-content {
+      text-align: center;
+      padding: 3rem;
+      max-width: 900px;
+      letter-spacing: 0.02em;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 1rem 2.5rem;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .section-1 .cta-button,
+    .section-3 .cta-button {
+      color: #f5f5f0;
+      border-color: rgba(245, 245, 240, 0.5);
+    }
+
+    .section-1 .cta-button:hover,
+    .section-3 .cta-button:hover {
+      background: rgba(245, 245, 240, 0.1);
+      border-color: rgba(245, 245, 240, 0.8);
+    }
+
+    .section-2 .cta-button {
+      color: #2c3338;
+      border-color: rgba(44, 51, 56, 0.5);
+    }
+
+    .section-2 .cta-button:hover {
+      background: rgba(44, 51, 56, 0.05);
+      border-color: rgba(44, 51, 56, 0.8);
+    }
+
+    /* Section 1: Charcoal background */
+    .section-1 {
+      background: #2c3338;
+      color: #f5f5f0;
+    }
+
+    .section-1 .logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 3rem;
+      opacity: 0.95;
+    }
+
+    .section-1 .tagline {
+      font-size: 1.75rem;
+      font-weight: 300;
+      opacity: 0.85;
+      letter-spacing: 0.05em;
+    }
+
+    /* Section 2: Off-white background */
+    .section-2 {
+      background: #f5f5f0;
+      color: #2c3338;
+    }
+
+    .section-2 h2 {
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .section-2 p {
+      font-size: 1.35rem;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Section 3: Muted accent tone */
+    .section-3 {
+      background: #4a5568;
+      color: #f5f5f0;
+    }
+
+    .section-3 h2 {
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    .section-3 p {
+      font-size: 1.35rem;
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-bar {
+        top: 1.5rem;
+        right: 1.5rem;
+      }
+
+      .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+
+      .section-content {
+        padding: 2rem;
+      }
+
+      .section-1 .logo {
+        width: 140px;
+        margin-bottom: 2rem;
+      }
+
+      .section-1 .tagline {
+        font-size: 1.25rem;
+      }
+
+      .section-2 h2,
+      .section-3 h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-2 p,
+      .section-3 p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .cta-button {
+        margin-top: 2rem;
+        padding: 0.875rem 2rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <a href="about.html" class="nav-link">About</a>
+  </nav>
+
+  <div class="scroll-container">
+    <!-- Section 1 -->
+    <section class="scroll-section section-1">
+      <div class="section-content">
+        <img src="logo.png" alt="Cadence Logo" class="logo">
+        <p class="tagline">Rhythm, clarity, and dependable craft</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="scroll-section section-2">
+      <div class="section-content">
+        <h2>What We Do</h2>
+        <p>We build mobile applications with care, clarity, and professional restraint. Thoughtful progress over chaotic shipping. Quality execution over speed.</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- Section 3 -->
+    <section class="scroll-section section-3">
+      <div class="section-content">
+        <h2>Our Approach</h2>
+        <p>Sustainable pace. Disciplined process. Reliable delivery. We help organisations turn ideas into stable, maintainable software—delivered carefully and with craft.</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
