@@ -1,10 +1,10 @@
 ---
-title: "My Company"
-tagline: "Building amazing things"
+title: "Cadence"
+tagline: "Rhythm, clarity, and dependable craft"
 section2_title: "What We Do"
-section2_content: "We create innovative solutions that make a difference. Our team is dedicated to delivering excellence in everything we do."
-section3_title: "Get in Touch"
-section3_content: "Ready to work together? We'd love to hear from you. Visit our About page to learn more."
+section2_content: "We build mobile applications with care, clarity, and professional restraint. Thoughtful progress over chaotic shipping. Quality execution over speed."
+section3_title: "Our Approach"
+section3_content: "Sustainable pace. Disciplined process. Reliable delivery. We help organisations turn ideas into stable, maintainable software—delivered carefully and with craft."
 ---
 
 
