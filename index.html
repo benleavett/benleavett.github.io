@@ -7,13 +7,13 @@
   <meta name="description" content="A mobile product practice built on rhythm, clarity, and dependable craft.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Fonts */
       --font-body: 'Crimson Text', serif;
-      --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      --font-button: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      --font-button: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 
       /* Font Weights */
       --weight-regular: 400;
@@ -145,6 +145,21 @@
       color: var(--color-cream);
     }
 
+    /* Button on Orange Background */
+    .btn-on-orange {
+      color: var(--color-black);
+      border: 2px solid var(--color-yellow);
+      text-transform: uppercase;
+    }
+
+    .btn-on-orange::before {
+      background: var(--color-yellow);
+    }
+
+    .btn-on-orange:hover {
+      color: var(--color-black);
+    }
+
     /* Secondary Button (Cream outline) */
     .btn-secondary {
       color: var(--color-cream);
@@ -165,14 +180,31 @@
       margin-top: 2.5rem;
     }
 
-    /* Section 1: Burgundy background with Mont Ventoux */
+    /* Section 1: Burgundy gradient background with Mont Ventoux */
     .section-1 {
-      background-color: var(--color-burgundy);
+      background: linear-gradient(to right, #6a1f2a 0%, var(--color-burgundy) 100%);
+      position: relative;
+      color: var(--color-cream);
+    }
+
+    .section-1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-image: url('images/ventoux_sparse_line_drawing_v2.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      color: var(--color-cream);
+      opacity: 1;
+      z-index: 0;
+    }
+
+    .section-1 .section-content {
+      position: relative;
+      z-index: 1;
     }
 
     .section-1 .logo {
@@ -189,9 +221,9 @@
       line-height: 1.6;
     }
 
-    /* Section 2: Cream background with app UI */
+    /* Section 2: Cream gradient background with app UI */
     .section-2 {
-      background-color: var(--color-cream);
+      background: linear-gradient(to right, #f5f0e6 0%, var(--color-cream) 100%);
       color: var(--color-black);
       position: relative;
     }
@@ -217,9 +249,9 @@
       z-index: 1;
     }
 
-    /* Section 3: Turquoise background with gantt chart */
+    /* Section 3: White gradient background with gantt chart */
     .section-3 {
-      background-color: var(--color-turquoise);
+      background: linear-gradient(to right, #f0f0f0 0%, white 100%);
       color: var(--color-black);
       position: relative;
     }
@@ -294,7 +326,7 @@
     }
 
     .portfolio-item {
-      background: var(--color-cream);
+      background: #FFCC00;
       padding: 2rem;
       border-radius: 4px;
       text-align: left;
@@ -317,8 +349,8 @@
     .portfolio-tag {
       display: inline-block;
       padding: 0.25rem 0.75rem;
-      background: var(--color-orange);
-      color: var(--color-black);
+      background: var(--color-burgundy);
+      color: var(--color-cream);
       font-family: var(--font-heading);
       font-size: 0.75rem;
       font-weight: var(--weight-medium);
@@ -329,11 +361,32 @@
       margin-right: 0.5rem;
     }
 
-    /* Section 4: Orange background */
+    /* Section 4: Grey gradient background with trees */
     .section-4 {
-      background-color: var(--color-orange);
-      color: var(--color-black);
+      background: linear-gradient(135deg, #4f4f4f 0%, #1a1a1a 100%);
+      color: var(--color-cream);
       position: relative;
+    }
+
+    .section-4::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/trees_sparse_line_drawing.png');
+      background-repeat: no-repeat;
+      background-position: left center;
+      background-size: 60%;
+      filter: invert(1);
+      opacity: 1;
+      z-index: 0;
+    }
+
+    .section-4 .section-content {
+      position: relative;
+      z-index: 1;
     }
 
     .section-4 h2 {
@@ -342,7 +395,7 @@
       margin-bottom: 2.5rem;
       font-weight: var(--weight-medium);
       letter-spacing: 0.02em;
-      color: var(--color-black);
+      color: var(--color-cream);
     }
 
     .section-4 p {
@@ -352,7 +405,7 @@
       font-weight: var(--weight-regular);
       max-width: 700px;
       margin: 0 auto;
-      color: var(--color-black);
+      color: var(--color-cream);
     }
 
     /* Responsive */
@@ -417,14 +470,14 @@
         font-size: 2rem;
         margin-bottom: 1.5rem;
         font-weight: var(--weight-medium);
-        color: var(--color-black);
+        color: var(--color-cream);
       }
 
       .section-4 p {
         font-size: 1.1rem;
         line-height: 1.7;
         font-weight: var(--weight-regular);
-        color: var(--color-black);
+        color: var(--color-cream);
       }
 
       .portfolio-grid {
@@ -458,7 +511,6 @@
 <body>
   <!-- Navigation -->
   <nav class="nav-bar">
-    <a href="https://www.linkedin.com/in/bleavett/" class="btn btn-secondary" target="_blank">LinkedIn</a>
   </nav>
 
   <div class="scroll-container">
@@ -478,14 +530,15 @@
         <h2>About Cadence</h2>
         <p>A senior, craft-led software product practice helping organisations build reliable, well-designed applications with care and intention.</p>
         <p>Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.</p>
+        <a href="#portfolio" class="btn btn-primary-on-light cta-button">Portfolio</a>
       </div>
     </section>
 
     <!-- Section 3 -->
-    <section class="scroll-section section-3">
+    <section id="portfolio" class="scroll-section section-3">
       <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
-        <h2>Selected Work</h2>
+        <h2>Recent Work</h2>
         <div class="portfolio-grid">
           <div class="portfolio-item">
             <h3>Enterprise SaaS Platform</h3>
@@ -509,17 +562,18 @@
             <span class="portfolio-tag">NLP</span>
           </div>
         </div>
+        <a href="#contact" class="btn btn-primary-on-light cta-button">Get in Touch</a>
       </div>
     </section>
 
     <!-- Section 4 - Contact -->
-    <section class="scroll-section section-4">
-      <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
+    <section id="contact" class="scroll-section section-4">
+      <img src="images/cadence-logo-white-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
         <h2>Get in Touch</h2>
         <p>Ready to discuss your project? Let's talk.</p>
         <p>benleavett at gmail dot com</p>
-        <a href="https://www.linkedin.com/in/bleavett/" class="btn btn-primary-on-light cta-button" target="_blank">Connect on LinkedIn</a>
+        <a href="https://www.linkedin.com/in/bleavett/" class="btn btn-primary cta-button" target="_blank">Connect on LinkedIn</a>
       </div>
     </section>
   </div>
