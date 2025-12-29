@@ -21,11 +21,13 @@
       --weight-semibold: 600;
 
       /* Colors */
-      --color-charcoal: #2D2926;
-      --color-bone: #F7F4EF;
-      --color-ochre: #C2571A;
-      --color-ochre-dark: #A34715;
-      --color-stone: #E8D5B7;
+      --color-yellow: #FFCC00;
+      --color-orange: #FF9933;
+      --color-red: #FF4444;
+      --color-burgundy: #8B2835;
+      --color-black: #000000;
+      --color-cream: #FFF8DC;
+      --color-turquoise: #50C4D4;
     }
 
     * {
@@ -113,49 +115,49 @@
       width: 100%;
     }
 
-    /* Primary Button (Ochre) */
+    /* Primary Button (Yellow) */
     .btn-primary {
-      color: var(--color-bone);
-      border: 2px solid var(--color-ochre);
+      color: var(--color-cream);
+      border: 2px solid var(--color-yellow);
       text-transform: uppercase;
     }
 
     .btn-primary::before {
-      background: var(--color-ochre);
+      background: var(--color-yellow);
     }
 
     .btn-primary:hover {
-      color: var(--color-bone);
+      color: var(--color-black);
     }
 
     /* Primary Button on Light Background */
     .btn-primary-on-light {
-      color: var(--color-charcoal);
-      border: 2px solid var(--color-ochre);
+      color: var(--color-black);
+      border: 2px solid var(--color-orange);
       text-transform: uppercase;
     }
 
     .btn-primary-on-light::before {
-      background: var(--color-ochre);
+      background: var(--color-orange);
     }
 
     .btn-primary-on-light:hover {
-      color: var(--color-bone);
+      color: var(--color-cream);
     }
 
-    /* Secondary Button (Bone outline) */
+    /* Secondary Button (Cream outline) */
     .btn-secondary {
-      color: var(--color-bone);
-      border: 2px solid var(--color-bone);
-      background: var(--color-charcoal);
+      color: var(--color-cream);
+      border: 2px solid var(--color-cream);
+      background: var(--color-burgundy);
     }
 
     .btn-secondary::before {
-      background: var(--color-bone);
+      background: var(--color-cream);
     }
 
     .btn-secondary:hover {
-      color: var(--color-charcoal);
+      color: var(--color-burgundy);
     }
 
     /* CTA Button spacing */
@@ -163,14 +165,14 @@
       margin-top: 2.5rem;
     }
 
-    /* Section 1: Charcoal background with Mont Ventoux */
+    /* Section 1: Burgundy background with Mont Ventoux */
     .section-1 {
-      background-color: var(--color-charcoal);
+      background-color: var(--color-burgundy);
       background-image: url('images/ventoux_sparse_line_drawing_v2.png');
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      color: var(--color-bone);
+      color: var(--color-cream);
     }
 
     .section-1 .logo {
@@ -187,10 +189,10 @@
       line-height: 1.6;
     }
 
-    /* Section 2: Bone background with app UI */
+    /* Section 2: Cream background with app UI */
     .section-2 {
-      background-color: var(--color-bone);
-      color: var(--color-charcoal);
+      background-color: var(--color-cream);
+      color: var(--color-black);
       position: relative;
     }
 
@@ -215,10 +217,10 @@
       z-index: 1;
     }
 
-    /* Section 3: Terra Ochre background with gantt chart */
+    /* Section 3: Turquoise background with gantt chart */
     .section-3 {
-      background-color: #A64F27;
-      color: var(--color-bone);
+      background-color: var(--color-turquoise);
+      color: var(--color-black);
       position: relative;
     }
 
@@ -267,7 +269,7 @@
       margin-bottom: 2.5rem;
       font-weight: var(--weight-medium);
       letter-spacing: 0.02em;
-      color: var(--color-bone);
+      color: var(--color-black);
     }
 
     .section-3 p {
@@ -277,7 +279,7 @@
       font-weight: var(--weight-regular);
       max-width: 700px;
       margin: 0 auto;
-      color: var(--color-bone);
+      color: var(--color-black);
     }
 
     /* Portfolio Grid */
@@ -292,7 +294,7 @@
     }
 
     .portfolio-item {
-      background: white;
+      background: var(--color-cream);
       padding: 2rem;
       border-radius: 4px;
       text-align: left;
@@ -303,20 +305,20 @@
       font-size: 1.5rem;
       font-weight: var(--weight-medium);
       margin-bottom: 1rem;
-      color: var(--color-charcoal);
+      color: var(--color-black);
     }
 
     .portfolio-item p {
       font-size: 1.1rem;
-      color: var(--color-charcoal);
+      color: var(--color-black);
       line-height: 1.6;
     }
 
     .portfolio-tag {
       display: inline-block;
       padding: 0.25rem 0.75rem;
-      background: #E8D5B7;
-      color: var(--color-charcoal);
+      background: var(--color-orange);
+      color: var(--color-black);
       font-family: var(--font-heading);
       font-size: 0.75rem;
       font-weight: var(--weight-medium);
@@ -325,6 +327,32 @@
       border-radius: 3px;
       margin-top: 1rem;
       margin-right: 0.5rem;
+    }
+
+    /* Section 4: Orange background */
+    .section-4 {
+      background-color: var(--color-orange);
+      color: var(--color-black);
+      position: relative;
+    }
+
+    .section-4 h2 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.02em;
+      color: var(--color-black);
+    }
+
+    .section-4 p {
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      line-height: 1.8;
+      font-weight: var(--weight-regular);
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--color-black);
     }
 
     /* Responsive */
@@ -375,14 +403,28 @@
         font-size: 2rem;
         margin-bottom: 1.5rem;
         font-weight: var(--weight-medium);
-        color: var(--color-bone);
+        color: var(--color-black);
       }
 
       .section-3 p {
         font-size: 1.1rem;
         line-height: 1.7;
         font-weight: var(--weight-regular);
-        color: var(--color-bone);
+        color: var(--color-black);
+      }
+
+      .section-4 h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: var(--weight-medium);
+        color: var(--color-black);
+      }
+
+      .section-4 p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        font-weight: var(--weight-regular);
+        color: var(--color-black);
       }
 
       .portfolio-grid {
@@ -436,13 +478,12 @@
         <h2>About Cadence</h2>
         <p>A senior, craft-led software product practice helping organisations build reliable, well-designed applications with care and intention.</p>
         <p>Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.</p>
-        <p>benleavett at gmail dot com</p>
       </div>
     </section>
 
     <!-- Section 3 -->
     <section class="scroll-section section-3">
-      <img src="images/cadence-logo-white-1.png" alt="Cadence" class="section-logo">
+      <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
         <h2>Selected Work</h2>
         <div class="portfolio-grid">
@@ -468,6 +509,17 @@
             <span class="portfolio-tag">NLP</span>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Section 4 - Contact -->
+    <section class="scroll-section section-4">
+      <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
+      <div class="section-content">
+        <h2>Get in Touch</h2>
+        <p>Ready to discuss your project? Let's talk.</p>
+        <p>benleavett at gmail dot com</p>
+        <a href="https://www.linkedin.com/in/bleavett/" class="btn btn-primary-on-light cta-button" target="_blank">Connect on LinkedIn</a>
       </div>
     </section>
   </div>
