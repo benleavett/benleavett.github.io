@@ -5,7 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadence</title>
   <meta name="description" content="A mobile product practice built on rhythm, clarity, and dependable craft.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      /* Fonts */
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      --font-button: 'Crimson Text', serif;
+
+      /* Font Weights */
+      --weight-regular: 400;
+      --weight-medium: 500;
+      --weight-semibold: 600;
+
+      /* Colors */
+      --color-charcoal: #2D2926;
+      --color-bone: #F7F4EF;
+      --color-ochre: #C2571A;
+      --color-ochre-dark: #A34715;
+      --color-stone: #E8D5B7;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,7 +37,7 @@
     html, body {
       height: 100%;
       overflow: hidden;
-      font-family: 'DejaVu Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+      font-family: var(--font-body);
     }
 
     /* Navigation */
@@ -26,22 +48,6 @@
       z-index: 1000;
     }
 
-    .nav-link {
-      color: #f5f5f0;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      padding: 0.75rem 1.5rem;
-      border: 1px solid rgba(245, 245, 240, 0.3);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .nav-link:hover {
-      background: rgba(245, 245, 240, 0.1);
-      border-color: rgba(245, 245, 240, 0.5);
-    }
 
     .scroll-container {
       height: 100vh;
@@ -67,100 +73,167 @@
       letter-spacing: 0.02em;
     }
 
-    /* CTA Button */
-    .cta-button {
+    /* Button Base */
+    .btn {
       display: inline-block;
-      margin-top: 2.5rem;
-      padding: 1rem 2.5rem;
-      font-size: 1rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
+      padding: 1.125rem 2.75rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.1em;
       text-decoration: none;
-      border: 1px solid currentColor;
-      border-radius: 2px;
-      transition: all 0.3s ease;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: color 0.4s ease;
     }
 
-    .section-1 .cta-button,
-    .section-3 .cta-button {
-      color: #f5f5f0;
-      border-color: rgba(245, 245, 240, 0.5);
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      transition: width 0.4s ease;
     }
 
-    .section-1 .cta-button:hover,
-    .section-3 .cta-button:hover {
-      background: rgba(245, 245, 240, 0.1);
-      border-color: rgba(245, 245, 240, 0.8);
+    .btn:hover::before {
+      width: 100%;
     }
 
-    .section-2 .cta-button {
-      color: #2c3338;
-      border-color: rgba(44, 51, 56, 0.5);
+    /* Primary Button (Ochre) */
+    .btn-primary {
+      color: var(--color-bone);
+      border: 2px solid var(--color-ochre);
+      text-transform: uppercase;
     }
 
-    .section-2 .cta-button:hover {
-      background: rgba(44, 51, 56, 0.05);
-      border-color: rgba(44, 51, 56, 0.8);
+    .btn-primary::before {
+      background: var(--color-ochre);
     }
 
-    /* Section 1: Charcoal background */
+    .btn-primary:hover {
+      color: var(--color-bone);
+    }
+
+    /* Secondary Button (Bone outline) */
+    .btn-secondary {
+      color: var(--color-bone);
+      border: 2px solid var(--color-bone);
+    }
+
+    .btn-secondary::before {
+      background: var(--color-bone);
+    }
+
+    .btn-secondary:hover {
+      color: var(--color-charcoal);
+    }
+
+    /* CTA Button spacing */
+    .cta-button {
+      margin-top: 2.5rem;
+    }
+
+    /* Section 1: Charcoal background with Mont Ventoux */
     .section-1 {
-      background: #2c3338;
-      color: #f5f5f0;
+      background-color: var(--color-charcoal);
+      background-image: url('images/ventoux_sparse_line_drawing_v2.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      color: var(--color-bone);
     }
 
     .section-1 .logo {
       width: 200px;
       height: auto;
       margin-bottom: 3rem;
-      opacity: 0.95;
     }
 
     .section-1 .tagline {
+      font-family: var(--font-body);
       font-size: 1.75rem;
-      font-weight: 300;
-      opacity: 0.85;
+      font-weight: var(--weight-regular);
       letter-spacing: 0.05em;
+      line-height: 1.6;
     }
 
-    /* Section 2: Off-white background */
+    /* Section 2: Bone background with app UI */
     .section-2 {
-      background: #f5f5f0;
-      color: #2c3338;
+      background-color: var(--color-bone);
+      color: var(--color-charcoal);
+      position: relative;
     }
 
-    .section-2 h2 {
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
+    .section-2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/app_ui_sparse_line_drawing.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      filter: invert(1);
+      opacity: 1;
+      z-index: 0;
     }
 
-    .section-2 p {
-      font-size: 1.35rem;
-      line-height: 1.8;
-      font-weight: 300;
-      max-width: 700px;
-      margin: 0 auto;
+    .section-2 .section-content {
+      position: relative;
+      z-index: 1;
     }
 
-    /* Section 3: Muted accent tone */
+    /* Section 3: Stone background with gantt chart */
     .section-3 {
-      background: #4a5568;
-      color: #f5f5f0;
+      background-color: var(--color-stone);
+      color: var(--color-charcoal);
+      position: relative;
     }
 
+    .section-3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/gantt_sparse_line_drawing.png');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      filter: invert(1);
+      opacity: 1;
+      z-index: 0;
+    }
+
+    .section-3 .section-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Shared heading and paragraph styles */
+    .section-2 h2,
     .section-3 h2 {
+      font-family: var(--font-heading);
       font-size: 3rem;
       margin-bottom: 2.5rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.02em;
     }
 
+    .section-2 p,
     .section-3 p {
+      font-family: var(--font-body);
       font-size: 1.35rem;
       line-height: 1.8;
-      font-weight: 300;
+      font-weight: var(--weight-regular);
       max-width: 700px;
       margin: 0 auto;
     }
@@ -188,24 +261,30 @@
 
       .section-1 .tagline {
         font-size: 1.25rem;
+        font-weight: var(--weight-regular);
       }
 
       .section-2 h2,
       .section-3 h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
+        font-weight: var(--weight-medium);
       }
 
       .section-2 p,
       .section-3 p {
         font-size: 1.1rem;
         line-height: 1.7;
+        font-weight: var(--weight-regular);
+      }
+
+      .btn {
+        padding: 1rem 2.25rem;
+        font-size: 0.8rem;
       }
 
       .cta-button {
         margin-top: 2rem;
-        padding: 0.875rem 2rem;
-        font-size: 0.9rem;
       }
     }
   </style>
@@ -213,7 +292,7 @@
 <body>
   <!-- Navigation -->
   <nav class="nav-bar">
-    <a href="about.html" class="nav-link">About</a>
+    <a href="about.html" class="btn btn-secondary">About</a>
   </nav>
 
   <div class="scroll-container">
@@ -221,8 +300,8 @@
     <section class="scroll-section section-1">
       <div class="section-content">
         <img src="logo.png" alt="Cadence Logo" class="logo">
-        <p class="tagline">Rhythm, clarity, and dependable craft</p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
+        <p class="tagline">Software product development and AI consulting</p>
+        <a href="#contact" class="btn btn-primary cta-button">What We Offer</a>
       </div>
     </section>
 
@@ -230,8 +309,8 @@
     <section class="scroll-section section-2">
       <div class="section-content">
         <h2>What We Do</h2>
-        <p>We build mobile applications with care, clarity, and professional restraint. Thoughtful progress over chaotic shipping. Quality execution over speed.</p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
+        <p>Software products, AI systems, and mobile apps. Strategic advice and rapid prototypes to validate ideas.</p>
+        <a href="#contact" class="btn btn-primary cta-button">Contact Us</a>
       </div>
     </section>
 
@@ -240,7 +319,7 @@
       <div class="section-content">
         <h2>Our Approach</h2>
         <p>Sustainable pace. Disciplined process. Reliable delivery. We help organisations turn ideas into stable, maintainable software—delivered carefully and with craft.</p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
+        <a href="#contact" class="btn btn-primary cta-button">Learn More</a>
       </div>
     </section>
   </div>
