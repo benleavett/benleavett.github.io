@@ -7,13 +7,13 @@
   <meta name="description" content="A mobile product practice built on rhythm, clarity, and dependable craft.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Crimson+Text:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       /* Fonts */
-      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      --font-body: 'Crimson Text', serif;
       --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      --font-button: 'Crimson Text', serif;
+      --font-button: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
 
       /* Font Weights */
       --weight-regular: 400;
@@ -73,11 +73,20 @@
       letter-spacing: 0.02em;
     }
 
+    .section-logo {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      width: 100px;
+      height: auto;
+      z-index: 10;
+    }
+
     /* Button Base */
     .btn {
       display: inline-block;
       padding: 1.125rem 2.75rem;
-      font-family: var(--font-body);
+      font-family: var(--font-button);
       font-size: 0.875rem;
       font-weight: var(--weight-medium);
       letter-spacing: 0.1em;
@@ -206,10 +215,10 @@
       z-index: 1;
     }
 
-    /* Section 3: Stone background with gantt chart */
+    /* Section 3: Terra Ochre background with gantt chart */
     .section-3 {
-      background-color: var(--color-stone);
-      color: var(--color-charcoal);
+      background-color: #A64F27;
+      color: var(--color-bone);
       position: relative;
     }
 
@@ -224,7 +233,6 @@
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      filter: invert(1);
       opacity: 1;
       z-index: 0;
     }
@@ -234,9 +242,8 @@
       z-index: 1;
     }
 
-    /* Shared heading and paragraph styles */
-    .section-2 h2,
-    .section-3 h2 {
+    /* Section 2 heading and paragraph styles */
+    .section-2 h2 {
       font-family: var(--font-heading);
       font-size: 3rem;
       margin-bottom: 2.5rem;
@@ -244,7 +251,25 @@
       letter-spacing: 0.02em;
     }
 
-    .section-2 p,
+    .section-2 p {
+      font-family: var(--font-body);
+      font-size: 1.35rem;
+      line-height: 1.8;
+      font-weight: var(--weight-regular);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Section 3 heading and paragraph styles */
+    .section-3 h2 {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      margin-bottom: 2.5rem;
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.02em;
+      color: var(--color-bone);
+    }
+
     .section-3 p {
       font-family: var(--font-body);
       font-size: 1.35rem;
@@ -252,6 +277,7 @@
       font-weight: var(--weight-regular);
       max-width: 700px;
       margin: 0 auto;
+      color: var(--color-bone);
     }
 
     /* Responsive */
@@ -264,6 +290,12 @@
       .nav-link {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+      }
+
+      .section-logo {
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 70px;
       }
 
       .section-content {
@@ -280,18 +312,30 @@
         font-weight: var(--weight-regular);
       }
 
-      .section-2 h2,
-      .section-3 h2 {
+      .section-2 h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
         font-weight: var(--weight-medium);
       }
 
-      .section-2 p,
+      .section-2 p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        font-weight: var(--weight-regular);
+      }
+
+      .section-3 h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        font-weight: var(--weight-medium);
+        color: var(--color-bone);
+      }
+
       .section-3 p {
         font-size: 1.1rem;
         line-height: 1.7;
         font-weight: var(--weight-regular);
+        color: var(--color-bone);
       }
 
       .btn {
@@ -315,7 +359,7 @@
     <!-- Section 1 -->
     <section class="scroll-section section-1">
       <div class="section-content">
-        <img src="logo.png" alt="Cadence Logo" class="logo">
+        <img src="images/cadence-logo-white-1.png" alt="Cadence Logo" class="logo">
         <p class="tagline">Software product development and AI consulting</p>
         <a href="#what-we-do" class="btn btn-primary cta-button">What We Do</a>
       </div>
@@ -323,6 +367,7 @@
 
     <!-- Section 2 -->
     <section id="what-we-do" class="scroll-section section-2">
+      <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
         <h2>What We Do</h2>
         <p>Software products, AI systems, and mobile apps. Strategic advice and rapid prototypes to validate ideas.</p>
@@ -332,11 +377,11 @@
 
     <!-- Section 3 -->
     <section class="scroll-section section-3">
+      <img src="images/cadence-logo-white-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
         <h2>Who We Are</h2>
-        <p>We offer advice, product & code reviews as well as full builds of mobile & web applications with a product mindset.</p>
-        <p>Product builder and software engineer with over 15 years experience working with tech companies of all shapes & sizes.</p>
-        <a href="about.html" class="btn btn-primary-on-light cta-button">Learn More</a>
+        <p>Product building advice, reviews and full builds of mobile & web applications and AI systems with a holistic product mindset.</p>
+        <a href="about.html" class="btn btn-primary cta-button">Learn More</a>
       </div>
     </section>
   </div>
