@@ -119,10 +119,26 @@
       color: var(--color-bone);
     }
 
+    /* Primary Button on Light Background */
+    .btn-primary-on-light {
+      color: var(--color-charcoal);
+      border: 2px solid var(--color-ochre);
+      text-transform: uppercase;
+    }
+
+    .btn-primary-on-light::before {
+      background: var(--color-ochre);
+    }
+
+    .btn-primary-on-light:hover {
+      color: var(--color-bone);
+    }
+
     /* Secondary Button (Bone outline) */
     .btn-secondary {
       color: var(--color-bone);
       border: 2px solid var(--color-bone);
+      background: var(--color-charcoal);
     }
 
     .btn-secondary::before {
@@ -301,25 +317,26 @@
       <div class="section-content">
         <img src="logo.png" alt="Cadence Logo" class="logo">
         <p class="tagline">Software product development and AI consulting</p>
-        <a href="#contact" class="btn btn-primary cta-button">What We Offer</a>
+        <a href="#what-we-do" class="btn btn-primary cta-button">What We Do</a>
       </div>
     </section>
 
     <!-- Section 2 -->
-    <section class="scroll-section section-2">
+    <section id="what-we-do" class="scroll-section section-2">
       <div class="section-content">
         <h2>What We Do</h2>
         <p>Software products, AI systems, and mobile apps. Strategic advice and rapid prototypes to validate ideas.</p>
-        <a href="#contact" class="btn btn-primary cta-button">Contact Us</a>
+        <a href="about.html" class="btn btn-primary-on-light cta-button">Tell Me More</a>
       </div>
     </section>
 
     <!-- Section 3 -->
     <section class="scroll-section section-3">
       <div class="section-content">
-        <h2>Our Approach</h2>
-        <p>Sustainable pace. Disciplined process. Reliable delivery. We help organisations turn ideas into stable, maintainable software—delivered carefully and with craft.</p>
-        <a href="#contact" class="btn btn-primary cta-button">Learn More</a>
+        <h2>Who We Are</h2>
+        <p>We offer advice, product & code reviews as well as full builds of mobile & web applications with a product mindset.</p>
+        <p>Product builder and software engineer with over 15 years experience working with tech companies of all shapes & sizes.</p>
+        <a href="about.html" class="btn btn-primary-on-light cta-button">Learn More</a>
       </div>
     </section>
   </div>
