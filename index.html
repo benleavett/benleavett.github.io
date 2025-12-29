@@ -280,6 +280,53 @@
       color: var(--color-bone);
     }
 
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .portfolio-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 4px;
+      text-align: left;
+    }
+
+    .portfolio-item h3 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: var(--weight-medium);
+      margin-bottom: 1rem;
+      color: var(--color-charcoal);
+    }
+
+    .portfolio-item p {
+      font-size: 1.1rem;
+      color: var(--color-charcoal);
+      line-height: 1.6;
+    }
+
+    .portfolio-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: #E8D5B7;
+      color: var(--color-charcoal);
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 3px;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .nav-bar {
@@ -338,6 +385,23 @@
         color: var(--color-bone);
       }
 
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .portfolio-item {
+        padding: 1.5rem;
+      }
+
+      .portfolio-item h3 {
+        font-size: 1.25rem;
+      }
+
+      .portfolio-item p {
+        font-size: 1rem;
+      }
+
       .btn {
         padding: 1rem 2.25rem;
         font-size: 0.8rem;
@@ -352,7 +416,7 @@
 <body>
   <!-- Navigation -->
   <nav class="nav-bar">
-    <a href="about.html" class="btn btn-secondary">About</a>
+    <a href="https://www.linkedin.com/in/bleavett/" class="btn btn-secondary" target="_blank">LinkedIn</a>
   </nav>
 
   <div class="scroll-container">
@@ -369,9 +433,10 @@
     <section id="what-we-do" class="scroll-section section-2">
       <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
-        <h2>What We Do</h2>
-        <p>Software products, AI systems, and mobile apps. Strategic advice and rapid prototypes to validate ideas.</p>
-        <a href="about.html" class="btn btn-primary-on-light cta-button">Tell Me More</a>
+        <h2>About Cadence</h2>
+        <p>A senior, craft-led software product practice helping organisations build reliable, well-designed applications with care and intention.</p>
+        <p>Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.</p>
+        <p>benleavett at gmail dot com</p>
       </div>
     </section>
 
@@ -379,9 +444,30 @@
     <section class="scroll-section section-3">
       <img src="images/cadence-logo-white-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
-        <h2>Who We Are</h2>
-        <p>Product building advice, reviews and full builds of mobile & web applications and AI systems with a holistic product mindset.</p>
-        <a href="about.html" class="btn btn-primary cta-button">Learn More</a>
+        <h2>Selected Work</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <h3>Enterprise SaaS Platform</h3>
+            <p>Led product development for a B2B analytics platform serving 50,000+ users. Built scalable architecture and implemented AI-powered insights.</p>
+            <span class="portfolio-tag">Product</span>
+            <span class="portfolio-tag">Full-Stack</span>
+            <span class="portfolio-tag">AI/ML</span>
+          </div>
+          <div class="portfolio-item">
+            <h3>Mobile Health App</h3>
+            <p>Designed and developed iOS/Android app for healthcare startup. Integrated with medical devices and HIPAA-compliant backend.</p>
+            <span class="portfolio-tag">Mobile</span>
+            <span class="portfolio-tag">Healthcare</span>
+            <span class="portfolio-tag">API Design</span>
+          </div>
+          <div class="portfolio-item">
+            <h3>AI Consultation Tool</h3>
+            <p>Built conversational AI system for legal tech company. Reduced consultation time by 60% while maintaining high accuracy.</p>
+            <span class="portfolio-tag">AI</span>
+            <span class="portfolio-tag">LegalTech</span>
+            <span class="portfolio-tag">NLP</span>
+          </div>
+        </div>
       </div>
     </section>
   </div>
