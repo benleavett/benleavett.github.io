@@ -42,6 +42,10 @@
       font-family: var(--font-body);
     }
 
+    p {
+      margin-bottom: 1.5rem;
+    }
+
     /* Navigation */
     .nav-bar {
       position: fixed;
@@ -133,16 +137,16 @@
     /* Primary Button on Light Background */
     .btn-primary-on-light {
       color: var(--color-black);
-      border: 2px solid var(--color-orange);
+      border: 2px solid var(--color-yellow);
       text-transform: uppercase;
     }
 
     .btn-primary-on-light::before {
-      background: var(--color-orange);
+      background: var(--color-yellow);
     }
 
     .btn-primary-on-light:hover {
-      color: var(--color-cream);
+      color: var(--color-black);
     }
 
     /* Button on Orange Background */
@@ -271,7 +275,8 @@
       line-height: 1.8;
       font-weight: var(--weight-regular);
       max-width: 700px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Section 3 heading and paragraph styles */
@@ -290,7 +295,8 @@
       line-height: 1.8;
       font-weight: var(--weight-regular);
       max-width: 700px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       color: var(--color-black);
     }
 
@@ -446,8 +452,44 @@
       line-height: 1.8;
       font-weight: var(--weight-regular);
       max-width: 700px;
-      margin: 0 auto;
+      margin-left: auto;
+      margin-right: auto;
       color: var(--color-cream);
+    }
+
+    /* Prevent hover states from persisting on touch devices */
+    @media (hover: none) {
+      .btn:hover::before {
+        width: 0;
+      }
+
+      .btn-primary:hover {
+        color: var(--color-cream);
+      }
+
+      .btn-primary-on-light:hover {
+        color: var(--color-black);
+      }
+
+      .btn-on-orange:hover {
+        color: var(--color-black);
+      }
+
+      .btn-secondary:hover {
+        color: var(--color-cream);
+      }
+
+      .carousel-btn:hover {
+        background: rgba(74, 101, 114, 0.8);
+      }
+
+      .carousel-dot:hover {
+        background: rgba(74, 101, 114, 0.3);
+      }
+
+      .carousel-dot.active:hover {
+        background: #4a6572;
+      }
     }
 
     /* Responsive */
