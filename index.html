@@ -46,6 +46,46 @@
       margin-bottom: 1.5rem;
     }
 
+    /* Site Header */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 2rem;
+      z-index: 1000;
+      background: transparent;
+    }
+
+    .site-header .header-logo {
+      width: 120px;
+      height: auto;
+    }
+
+    .header-btn {
+      display: inline-block;
+      padding: 0.875rem 2rem;
+      font-family: var(--font-button);
+      font-size: 0.875rem;
+      font-weight: var(--weight-medium);
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: var(--color-cream);
+      border: 2px solid var(--color-yellow);
+      border-radius: 4px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    .header-btn:hover {
+      background: var(--color-yellow);
+      color: var(--color-black);
+    }
+
     /* Navigation */
     .nav-bar {
       position: fixed;
@@ -79,13 +119,8 @@
       letter-spacing: 0.02em;
     }
 
-    .section-logo {
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
-      width: 120px;
-      height: auto;
-      z-index: 10;
+    .section-3 .section-content {
+      max-width: 1400px;
     }
 
     /* Button Base */
@@ -149,44 +184,14 @@
       color: var(--color-black);
     }
 
-    /* Button on Orange Background */
-    .btn-on-orange {
-      color: var(--color-black);
-      border: 2px solid var(--color-yellow);
-      text-transform: uppercase;
-    }
-
-    .btn-on-orange::before {
-      background: var(--color-yellow);
-    }
-
-    .btn-on-orange:hover {
-      color: var(--color-black);
-    }
-
-    /* Secondary Button (Cream outline) */
-    .btn-secondary {
-      color: var(--color-cream);
-      border: 2px solid var(--color-cream);
-      background: var(--color-burgundy);
-    }
-
-    .btn-secondary::before {
-      background: var(--color-cream);
-    }
-
-    .btn-secondary:hover {
-      color: var(--color-burgundy);
-    }
-
     /* CTA Button spacing */
     .cta-button {
       margin-top: 2.5rem;
     }
 
-    /* Section 1: Burgundy gradient background with Mont Ventoux */
+    /* Section 1: Grey gradient background with Mont Ventoux */
     .section-1 {
-      background: linear-gradient(to right, #6a1f2a 0%, var(--color-burgundy) 100%);
+      background: linear-gradient(135deg, #4f4f4f 0%, #1a1a1a 100%);
       position: relative;
       color: var(--color-cream);
     }
@@ -225,10 +230,10 @@
       line-height: 1.6;
     }
 
-    /* Section 2: Cream gradient background with app UI */
+    /* Section 2: Dark gradient background */
     .section-2 {
-      background: linear-gradient(to right, #f5f0e6 0%, var(--color-cream) 100%);
-      color: var(--color-black);
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      color: var(--color-cream);
       position: relative;
     }
 
@@ -253,10 +258,10 @@
       z-index: 1;
     }
 
-    /* Section 3: Soft slate gradient background */
+    /* Section 3: Dark gradient background */
     .section-3 {
-      background: linear-gradient(to right, #d5dde3 0%, #c8d5dc 100%);
-      color: var(--color-black);
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+      color: var(--color-cream);
       position: relative;
     }
 
@@ -267,6 +272,8 @@
       margin-bottom: 2.5rem;
       font-weight: var(--weight-medium);
       letter-spacing: 0.02em;
+      color: var(--color-cream);
+      text-align: left;
     }
 
     .section-2 p {
@@ -275,8 +282,73 @@
       line-height: 1.8;
       font-weight: var(--weight-regular);
       max-width: 700px;
+      margin-left: 0;
+      margin-right: auto;
+      color: var(--color-cream);
+      text-align: left;
+    }
+
+    .section-2 .section-content {
+      text-align: left;
+    }
+
+    .section-2 .cta-button {
+      display: block;
+      text-align: center;
       margin-left: auto;
       margin-right: auto;
+      width: fit-content;
+    }
+
+    .who-we-are-content {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 0 3rem 0;
+    }
+
+    .profile-photo {
+      flex: 0 0 200px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-yellow);
+      box-shadow: 0 0 30px rgba(255, 204, 0, 0.3);
+    }
+
+    .who-text {
+      flex: 1;
+    }
+
+    .who-text p {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    .company-logos {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 3rem;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+      max-width: 900px;
+    }
+
+    .company-logos img {
+      height: 40px;
+      width: auto;
+      opacity: 0.8;
+      filter: brightness(0) invert(1);
+      transition: all 0.3s ease;
+    }
+
+    .company-logos img:hover {
+      opacity: 1;
+      transform: scale(1.1);
     }
 
     /* Section 3 heading and paragraph styles */
@@ -286,7 +358,7 @@
       margin-bottom: 2.5rem;
       font-weight: var(--weight-medium);
       letter-spacing: 0.02em;
-      color: var(--color-black);
+      color: var(--color-cream);
     }
 
     .section-3 p {
@@ -297,116 +369,199 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      color: var(--color-black);
+      color: var(--color-cream);
     }
 
-    /* Portfolio Carousel */
-    .portfolio-carousel {
-      position: relative;
-      max-width: 800px;
-      margin: 3rem auto 0;
-      overflow: visible;
-    }
-
-    .portfolio-track-container {
-      overflow: hidden;
-      position: relative;
-    }
-
-    .portfolio-track {
+    /* Timeline Section Layout */
+    .section-3 .section-content {
       display: flex;
-      transition: transform 0.5s ease;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem;
     }
 
-    .portfolio-item {
-      min-width: 100%;
-      width: 100%;
-      background: transparent;
-      padding: 1.5rem 1.5rem 1.5rem 2rem;
-      border-left: 4px solid #4a6572;
-      text-align: left;
-      flex-shrink: 0;
-      box-sizing: border-box;
+    /* Timeline Layout */
+    .timeline-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
 
-    .carousel-btn {
+    .timeline-wrapper::before {
+      content: '';
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(74, 101, 114, 0.8);
-      color: white;
-      border: none;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.5rem;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-yellow);
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    .section-3-title {
       display: flex;
       align-items: center;
-      justify-content: center;
-      z-index: 10;
-      transition: background 0.3s ease;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .carousel-btn:hover {
-      background: rgba(74, 101, 114, 1);
+    .section-3-title::before {
+      content: '';
+      width: 2px;
+      height: 80px;
+      background: var(--color-yellow);
+      opacity: 0.6;
+      flex-shrink: 0;
     }
 
-    .carousel-btn-prev {
-      left: -70px;
+    .section-3-title h2 {
+      margin: 0;
+      text-align: left;
     }
 
-    .carousel-btn-next {
-      right: -70px;
-    }
-
-    .carousel-dots {
+    .timeline-container {
       display: flex;
-      justify-content: center;
-      gap: 0.75rem;
+      gap: 3rem;
+      align-items: flex-start;
+      padding-left: 2rem;
+    }
+
+    .timeline {
+      flex: 0 0 300px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 1.5rem 0 1.5rem 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.1rem;
+      top: 2rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: rgba(255, 204, 0, 0.3);
+      border: 2px solid var(--color-yellow);
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .timeline-item.active::before {
+      background: var(--color-yellow);
+      border-color: var(--color-yellow);
+      width: 18px;
+      height: 18px;
+      left: -2.3rem;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    }
+
+    .timeline-item:hover::before {
+      background: var(--color-orange);
+      border-color: var(--color-orange);
+    }
+
+    .timeline-item h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: var(--weight-semibold);
+      color: var(--color-cream);
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .timeline-item.active h3 {
+      color: var(--color-yellow);
+    }
+
+    .timeline-item p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--color-cream);
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    .timeline-content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .timeline-content {
+      background: rgba(42, 42, 42, 0.5);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 204, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-3-cta {
+      text-align: center;
       margin-top: 2rem;
     }
 
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(74, 101, 114, 0.3);
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .carousel-dot.active {
-      background: #4a6572;
-    }
-
-    .portfolio-item h3 {
+    .timeline-content h3 {
       font-family: var(--font-heading);
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: var(--weight-semibold);
-      margin-bottom: 0.75rem;
-      color: #2d3e48;
+      color: var(--color-yellow);
+      margin-bottom: 1.5rem;
     }
 
-    .portfolio-item p {
+    .timeline-content p {
+      font-family: var(--font-body);
       font-size: 1.1rem;
-      color: #3a4a54;
-      line-height: 1.7;
+      line-height: 1.8;
+      color: var(--color-cream);
+      margin-bottom: 1.5rem;
     }
 
-    .portfolio-tag {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      background: #4a6572;
-      color: #f5f5f3;
-      font-family: var(--font-heading);
-      font-size: 0.75rem;
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      border-radius: 3px;
-      margin-top: 1rem;
-      margin-right: 0.5rem;
+    .timeline-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .timeline-content li {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-cream);
+      padding-left: 1.5rem;
+      position: relative;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-content li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--color-orange);
+      font-weight: bold;
+    }
+
+    .timeline-images {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .timeline-images img {
+      flex: 1;
+      max-width: 48%;
+      height: auto;
+      border-radius: 4px;
+      object-fit: cover;
     }
 
     /* Section 4: Grey gradient background with trees */
@@ -471,43 +626,30 @@
         color: var(--color-black);
       }
 
-      .btn-on-orange:hover {
-        color: var(--color-black);
-      }
-
-      .btn-secondary:hover {
+      .header-btn:hover {
+        background: transparent;
         color: var(--color-cream);
-      }
-
-      .carousel-btn:hover {
-        background: rgba(74, 101, 114, 0.8);
-      }
-
-      .carousel-dot:hover {
-        background: rgba(74, 101, 114, 0.3);
-      }
-
-      .carousel-dot.active:hover {
-        background: #4a6572;
       }
     }
 
     /* Responsive */
     @media (max-width: 768px) {
+      .site-header {
+        padding: 1.5rem;
+      }
+
+      .site-header .header-logo {
+        width: 84px;
+      }
+
+      .header-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.75rem;
+      }
+
       .nav-bar {
         top: 1.5rem;
         right: 1.5rem;
-      }
-
-      .nav-link {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-
-      .section-logo {
-        top: 1.5rem;
-        left: 1.5rem;
-        width: 84px;
       }
 
       .section-content {
@@ -528,26 +670,105 @@
         font-size: 2rem;
         margin-bottom: 1.5rem;
         font-weight: var(--weight-medium);
+        color: var(--color-cream);
       }
 
       .section-2 p {
         font-size: 1.1rem;
         line-height: 1.7;
         font-weight: var(--weight-regular);
+        color: var(--color-cream);
+      }
+
+      .who-we-are-content {
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .profile-photo {
+        flex: 0 0 150px;
+        width: 150px;
+        height: 150px;
+      }
+
+      .company-logos {
+        gap: 2rem;
+      }
+
+      .company-logos img {
+        height: 30px;
       }
 
       .section-3 h2 {
         font-size: 2rem;
         margin-bottom: 1.5rem;
         font-weight: var(--weight-medium);
-        color: var(--color-black);
+        color: var(--color-cream);
       }
 
       .section-3 p {
         font-size: 1.1rem;
         line-height: 1.7;
         font-weight: var(--weight-regular);
-        color: var(--color-black);
+        color: var(--color-cream);
+      }
+
+      .section-3 .section-content {
+        padding: 2rem;
+      }
+
+      .section-3-title::before {
+        height: 50px;
+      }
+
+      .timeline-wrapper::before {
+        left: 0;
+      }
+
+      .timeline-container {
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 1.5rem;
+      }
+
+      .timeline {
+        flex: 1;
+      }
+
+      .timeline-item {
+        padding: 1rem 0 1rem 1.5rem;
+      }
+
+      .timeline-item::before {
+        left: -1.6rem;
+      }
+
+      .timeline-item.active::before {
+        left: -1.8rem;
+      }
+
+      .timeline-item h3 {
+        font-size: 1.1rem;
+      }
+
+      .timeline-content {
+        padding: 1.5rem;
+      }
+
+      .timeline-content h3 {
+        font-size: 1.5rem;
+      }
+
+      .timeline-content p {
+        font-size: 1rem;
+      }
+
+      .timeline-images {
+        flex-direction: column;
+      }
+
+      .timeline-images img {
+        max-width: 100%;
       }
 
       .section-4 h2 {
@@ -564,36 +785,6 @@
         color: var(--color-cream);
       }
 
-      .portfolio-carousel {
-        max-width: 90%;
-      }
-
-      .carousel-btn-prev {
-        left: -50px;
-      }
-
-      .carousel-btn-next {
-        right: -50px;
-      }
-
-      .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-      }
-
-      .portfolio-item {
-        padding: 1.5rem;
-      }
-
-      .portfolio-item h3 {
-        font-size: 1.25rem;
-      }
-
-      .portfolio-item p {
-        font-size: 1rem;
-      }
-
       .btn {
         padding: 1rem 2.25rem;
         font-size: 0.8rem;
@@ -606,6 +797,12 @@
   </style>
 </head>
 <body>
+  <!-- Site Header -->
+  <header class="site-header">
+    <img src="images/cadence-logo-white-1.png" alt="Cadence" class="header-logo">
+    <a href="#contact" class="header-btn">Contact Us</a>
+  </header>
+
   <!-- Navigation -->
   <nav class="nav-bar">
   </nav>
@@ -616,67 +813,76 @@
       <div class="section-content">
         <img src="images/cadence-logo-white-1.png" alt="Cadence Logo" class="logo">
         <p class="tagline">Software product development and AI consulting</p>
-        <a href="#what-we-do" class="btn btn-primary cta-button">About Us</a>
+        <a href="#what-we-can-do" class="btn btn-primary cta-button">What We Can Do</a>
       </div>
     </section>
 
-    <!-- Section 2 -->
-    <section id="what-we-do" class="scroll-section section-2">
-      <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
+    <!-- Section 2: What We Can Do -->
+    <section id="what-we-can-do" class="scroll-section section-3">
       <div class="section-content">
-        <h2>About Cadence</h2>
-        <p>A software product practice helping organisations build reliable, well-designed applications that suit their needs.</p>
-        <p>Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.</p>
-        <a href="#portfolio" class="btn btn-primary-on-light cta-button">Portfolio</a>
-      </div>
-    </section>
-
-    <!-- Section 3 -->
-    <section id="portfolio" class="scroll-section section-3">
-      <img src="images/cadence-logo-black-1.png" alt="Cadence" class="section-logo">
-      <div class="section-content">
-        <h2>Portfolio</h2>
-        <div class="portfolio-carousel">
-          <button class="carousel-btn carousel-btn-prev" aria-label="Previous">‹</button>
-          <button class="carousel-btn carousel-btn-next" aria-label="Next">›</button>
-          <div class="portfolio-track-container">
-            <div class="portfolio-track">
-              <div class="portfolio-item">
-                <h3>Enterprise SaaS Platform</h3>
-                <p>Led product development for a B2B analytics platform serving 50,000+ users. Built scalable architecture and implemented AI-powered insights.</p>
-                <span class="portfolio-tag">Product</span>
-                <span class="portfolio-tag">Full-Stack</span>
-                <span class="portfolio-tag">AI/ML</span>
+        <div class="timeline-wrapper">
+          <div class="section-3-title">
+            <h2>What We Can Do</h2>
+          </div>
+          <div class="timeline-container">
+            <div class="timeline">
+              <div class="timeline-item active" data-capability="mobile">
+                <h3>Mobile App Development</h3>
+                <p>Native & cross-platform</p>
               </div>
-              <div class="portfolio-item">
-                <h3>Mobile Health App</h3>
-                <p>Designed and developed iOS/Android app for healthcare startup. Integrated with medical devices and HIPAA-compliant backend.</p>
-                <span class="portfolio-tag">Mobile</span>
-                <span class="portfolio-tag">Healthcare</span>
-                <span class="portfolio-tag">API Design</span>
+              <div class="timeline-item" data-capability="web">
+                <h3>Web Applications</h3>
+                <p>Modern, scalable solutions</p>
               </div>
-              <div class="portfolio-item">
-                <h3>AI Consultation Tool</h3>
-                <p>Built conversational AI system for legal tech company. Reduced consultation time by 60% while maintaining high accuracy.</p>
-                <span class="portfolio-tag">AI</span>
-                <span class="portfolio-tag">LegalTech</span>
-                <span class="portfolio-tag">NLP</span>
+              <div class="timeline-item" data-capability="ai">
+                <h3>AI Integration</h3>
+                <p>Intelligence in your apps</p>
+              </div>
+              <div class="timeline-item" data-capability="consulting">
+                <h3>Technical Consulting</h3>
+                <p>Expert guidance & strategy</p>
+              </div>
+              <div class="timeline-item" data-capability="product">
+                <h3>Product Development</h3>
+                <p>From concept to launch</p>
+              </div>
+            </div>
+            <div class="timeline-content-wrapper">
+              <div class="timeline-content" id="capability-content">
+                <!-- Content will be loaded by JavaScript -->
+              </div>
+              <div class="section-3-cta">
+                <a href="#who-we-are" class="btn btn-primary cta-button">Who We Are</a>
               </div>
             </div>
           </div>
-          <div class="carousel-dots">
-            <div class="carousel-dot active"></div>
-            <div class="carousel-dot"></div>
-            <div class="carousel-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Who We Are -->
+    <section id="who-we-are" class="scroll-section section-2">
+      <div class="section-content">
+        <h2>Who We Are</h2>
+        <div class="who-we-are-content">
+          <img src="images/ben.png" alt="Ben Leavett" class="profile-photo">
+          <div class="who-text">
+            <p>Software product development and AI consulting. Start your digital journey with software built by someone who takes the time to understand your needs.</p>
+            <p>Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.</p>
           </div>
         </div>
-        <a href="#contact" class="btn btn-primary-on-light cta-button">Get in Touch</a>
+        <div class="company-logos">
+          <img src="images/microsoft-logo.svg" alt="Microsoft" onerror="this.style.display='none'">
+          <img src="images/swiftkey-logo.png" alt="SwiftKey" onerror="this.style.display='none'">
+          <img src="images/glovo-logo.png" alt="Glovo" onerror="this.style.display='none'">
+          <img src="images/doccla-logo.png" alt="Doccla" onerror="this.style.display='none'">
+        </div>
+        <a href="#contact" class="btn btn-primary cta-button">Get in Touch</a>
       </div>
     </section>
 
     <!-- Section 4 - Contact -->
     <section id="contact" class="scroll-section section-4">
-      <img src="images/cadence-logo-white-1.png" alt="Cadence" class="section-logo">
       <div class="section-content">
         <h2>Get in Touch</h2>
         <p>Ready to discuss your project? Let's talk.</p>
@@ -687,57 +893,96 @@
   </div>
 
   <script>
-    // Portfolio Carousel
-    const track = document.querySelector('.portfolio-track');
-    const items = document.querySelectorAll('.portfolio-item');
-    const prevBtn = document.querySelector('.carousel-btn-prev');
-    const nextBtn = document.querySelector('.carousel-btn-next');
-    const dots = document.querySelectorAll('.carousel-dot');
-
-    let currentIndex = 0;
-    const totalItems = items.length;
-
-    function updateCarousel() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-      // Update dots
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentIndex);
-      });
-    }
-
-    function goToNext() {
-      currentIndex = (currentIndex + 1) % totalItems;
-      updateCarousel();
-    }
-
-    function goToPrev() {
-      currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-      updateCarousel();
-    }
-
-    prevBtn.addEventListener('click', goToPrev);
-    nextBtn.addEventListener('click', goToNext);
-
-    // Dot navigation
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentIndex = index;
-        updateCarousel();
-      });
-    });
-
-    // Arrow key navigation
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        goToPrev();
-      } else if (e.key === 'ArrowRight') {
-        goToNext();
+    // Timeline Capability Switching
+    const capabilityContent = {
+      mobile: {
+        title: 'Mobile App Development',
+        description: 'Build native iOS and Android applications or leverage cross-platform frameworks for faster deployment. From consumer apps to enterprise solutions.',
+        features: [
+          'Cross-platform (iOS & Android) with React Native & Flutter',
+          'App Store & Play Store deployment',
+          'Integration with backend services and APIs'
+        ]
+      },
+      web: {
+        title: 'Web Applications',
+        description: 'Modern, responsive web applications built with the latest frameworks and technologies. Scalable architecture designed for growth.',
+        features: [
+          'React, Vue, and Next.js development',
+          'Progressive Web Apps (PWAs)',
+          'RESTful API and GraphQL integration',
+          'Real-time features with WebSockets',
+          'Cloud deployment and DevOps'
+        ]
+      },
+      ai: {
+        title: 'AI Integration',
+        description: 'Incorporate artificial intelligence into your applications to unlock new capabilities and enhance user experiences.',
+        features: [
+          'Large Language Model (LLM) integration',
+          'Natural language processing',
+          'Computer vision and image recognition',
+          'Recommendation systems',
+          'Custom AI model development and training'
+        ]
+      },
+      consulting: {
+        title: 'Technical Consulting',
+        description: 'Expert guidance on technology strategy, architecture decisions, and product roadmaps to help you make informed choices.',
+        features: [
+          'Technology stack assessment and recommendations',
+          'Architecture design and review',
+          'Code audits and quality assessments',
+          'Team mentoring and training',
+          'Project rescue and optimization'
+        ]
+      },
+      product: {
+        title: 'Product Development',
+        description: 'End-to-end product development from initial concept through design, development, testing, and launch.',
+        features: [
+          'Product strategy and roadmapping',
+          'UX/UI design and prototyping',
+          'Agile development methodology',
+          'Quality assurance and testing',
+          'Launch planning and support'
+        ]
       }
+    };
+
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const contentPanel = document.getElementById('capability-content');
+
+    function updateContent(capability) {
+      const content = capabilityContent[capability];
+
+      const featuresList = content.features.map(f => `<li>${f}</li>`).join('');
+
+      contentPanel.innerHTML = `
+        <h3>${content.title}</h3>
+        <p>${content.description}</p>
+        <ul>
+          ${featuresList}
+        </ul>
+      `;
+    }
+
+    timelineItems.forEach(item => {
+      item.addEventListener('click', () => {
+        // Remove active class from all items
+        timelineItems.forEach(i => i.classList.remove('active'));
+
+        // Add active class to clicked item
+        item.classList.add('active');
+
+        // Update content panel
+        const capability = item.getAttribute('data-capability');
+        updateContent(capability);
+      });
     });
 
-    // Optional: Auto-advance every 5 seconds
-    // setInterval(goToNext, 5000);
+    // Load default content on page load
+    updateContent('mobile');
   </script>
 </body>
 </html>
