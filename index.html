@@ -71,6 +71,7 @@
 
     /* Typography */
     h1, h2, h3, h4, h5, h6 {
+      font-family: 'Plus Jakarta Sans', var(--font-1);
       font-weight: var(--font-bold);
       line-height: 1.3;
     }
@@ -153,9 +154,11 @@
       align-items: center;
       height: 100%;
       padding: 0 12px;
-      font-size: 18px;
-      font-weight: var(--font-bold);
-      letter-spacing: -0.02em;
+    }
+
+    .header__logo img {
+      height: 32px;
+      width: auto;
     }
 
     .header__nav {
@@ -287,8 +290,20 @@
     /* Capabilities Grid */
     .capabilities {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+      .capabilities {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .capabilities {
+        grid-template-columns: 1fr;
+      }
     }
 
     .capability {
@@ -324,13 +339,13 @@
     .capability__icon--yellow { background: var(--color-yellow); color: var(--color-primary); }
 
     .capability__title {
-      font-size: 1.25rem;
-      font-weight: var(--font-bold);
+      font-family: 'Plus Jakarta Sans', var(--font-1);
+      font-size: 1.9rem;
       margin-bottom: 12px;
     }
 
     .capability__description {
-      font-size: 14px;
+      font-size: 16px;
       color: rgba(var(--color-primary-rgb), 0.7);
       line-height: 1.6;
       margin-bottom: 16px;
@@ -338,7 +353,7 @@
 
     .capability__features {
       list-style: none;
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .capability__features li {
@@ -443,7 +458,7 @@
     }
 
     .contact__content {
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
@@ -454,14 +469,144 @@
     .contact__text {
       font-size: 1.1rem;
       color: rgba(var(--color-primary-rgb), 0.7);
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
     }
 
-    .contact__email {
-      font-size: 1.25rem;
+    /* Contact Form */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: var(--bg-white);
+      border: 1px solid var(--bg-secondary);
+      border-radius: var(--rounded-normal);
+      font-family: var(--font-1);
+      font-size: 14px;
+      color: var(--color-primary);
+      transition: all 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--color-orange);
+      box-shadow: 0 0 0 3px rgba(250, 93, 41, 0.1);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(var(--color-primary-rgb), 0.4);
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .contact-form__group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-form__label {
+      font-size: 14px;
       font-weight: var(--font-medium);
-      margin-bottom: 2rem;
-      display: block;
+      color: var(--color-primary);
+    }
+
+    .contact-form__capabilities {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .contact-form__capabilities {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-form__checkbox {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      background: var(--bg-white);
+      border: 1px solid var(--bg-secondary);
+      border-radius: var(--rounded-normal);
+      cursor: pointer;
+      transition: all 0.3s;
+      user-select: none;
+    }
+
+    .contact-form__checkbox:hover {
+      border-color: var(--color-orange);
+      background: rgba(250, 93, 41, 0.02);
+    }
+
+    .contact-form__checkbox input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      cursor: pointer;
+      accent-color: var(--color-orange);
+    }
+
+    .contact-form__checkbox label {
+      flex: 1;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0;
+    }
+
+    .contact-form__checkbox input[type="checkbox"]:checked + label {
+      font-weight: var(--font-medium);
+    }
+
+    .contact-form button {
+      width: 100%;
+      height: 48px;
+      background: var(--color-orange);
+      color: var(--bg-white);
+      border: none;
+      border-radius: var(--rounded-normal);
+      font-family: var(--font-1);
+      font-size: 14px;
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .contact-form button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .contact-form button:active {
+      transform: translateY(0);
+    }
+
+    .contact__footer {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--bg-secondary);
+    }
+
+    .contact__footer a {
+      color: var(--color-orange);
+      font-weight: var(--font-medium);
+    }
+
+    .contact__footer a:hover {
+      opacity: 0.7;
     }
 
     /* Footer */
@@ -482,7 +627,9 @@
     .mb-2 { margin-bottom: 2rem; }
     .mb-3 { margin-bottom: 3rem; }
 
-    /* Load Inter Tight Font */
+    /* Load Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
     @font-face {
       font-family: 'Inter Tight';
       src: url('https://assets.awwwards.com/assets/fonts/inter-tight/InterTight-VariableFont_wght.ttf') format('truetype');
@@ -496,7 +643,7 @@
   <header class="header">
     <div class="header__container">
       <div class="header__logo">
-        Cadence
+        <img src="images/cadence-logo-black-1.jpeg" alt="Cadence">
       </div>
       <nav class="header__nav">
         <a href="#capabilities" class="header__link">
@@ -547,7 +694,7 @@
             Build native iOS and Android applications or leverage cross-platform frameworks for faster deployment.
           </p>
           <ul class="capability__features">
-            <li>Cross-platform (iOS & Android) with React Native & Flutter</li>
+            <li>Cross-platform (iOS & Android) with React Native</li>
             <li>App Store & Play Store deployment</li>
             <li>Integration with backend services and APIs</li>
           </ul>
@@ -577,11 +724,11 @@
             Incorporate artificial intelligence into your applications to unlock new capabilities.
           </p>
           <ul class="capability__features">
+            <li>Custom AI agent development</li>
             <li>Large Language Model (LLM) integration</li>
             <li>Natural language processing</li>
             <li>Computer vision and image recognition</li>
             <li>Recommendation systems</li>
-            <li>Custom AI model development</li>
           </ul>
         </div>
 
@@ -614,6 +761,21 @@
             <li>Agile development methodology</li>
             <li>Quality assurance and testing</li>
             <li>Launch planning and support</li>
+          </ul>
+        </div>
+
+        <!-- Lovable Prototype Reviews -->
+        <div class="capability">
+          <div class="capability__icon capability__icon--purple">✨</div>
+          <h3 class="capability__title">Lovable Prototype Reviews</h3>
+          <p class="capability__description">
+            Expert reviews and strategic advice for Lovable.dev sites.
+          </p>
+          <ul class="capability__features">
+            <li>Prototype architecture and code review</li>
+            <li>Scalability and production readiness assessment</li>
+            <li>Best practices for Lovable development</li>
+            <li>Strategic planning for prototype evolution</li>
           </ul>
         </div>
       </div>
@@ -652,12 +814,50 @@
         <p class="contact__text">
           Ready to discuss your project? Let's talk about how we can help bring your ideas to life.
         </p>
-        <a href="mailto:benleavett@gmail.com" class="contact__email">
-          benleavett@gmail.com
-        </a>
-        <a href="https://www.linkedin.com/in/bleavett/" class="btn btn--orange" target="_blank">
-          Connect on LinkedIn
-        </a>
+
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="88f81175-cf03-412a-a8de-3f5fc4dc1c3d">
+
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+
+          <div class="contact-form__group">
+            <label class="contact-form__label">I'm interested in: (select all that apply)</label>
+            <div class="contact-form__capabilities">
+              <div class="contact-form__checkbox">
+                <input type="checkbox" id="cap-mobile" name="interests[]" value="Mobile App Development">
+                <label for="cap-mobile">Mobile Apps</label>
+              </div>
+              <div class="contact-form__checkbox">
+                <input type="checkbox" id="cap-web" name="interests[]" value="Web Applications">
+                <label for="cap-web">Web Applications</label>
+              </div>
+              <div class="contact-form__checkbox">
+                <input type="checkbox" id="cap-ai" name="interests[]" value="AI Integration">
+                <label for="cap-ai">AI Integration</label>
+              </div>
+              <div class="contact-form__checkbox">
+                <input type="checkbox" id="cap-consulting" name="interests[]" value="Technical Consulting">
+                <label for="cap-consulting">Technical Consulting</label>
+              </div>
+              <div class="contact-form__checkbox">
+                <input type="checkbox" id="cap-product" name="interests[]" value="Product Development">
+                <label for="cap-product">Product Development</label>
+              </div>
+              <div class="contact-form__checkbox">
+                <input type="checkbox" id="cap-lovable" name="interests[]" value="Lovable Prototype Reviews">
+                <label for="cap-lovable">Lovable Prototype Review</label>
+              </div>
+            </div>
+          </div>
+
+          <textarea name="message" placeholder="Tell us about your project" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact__footer">
+          <p>Or connect with me on <a href="https://www.linkedin.com/in/bleavett/" target="_blank">LinkedIn</a></p>
+        </div>
       </div>
     </div>
   </section>
