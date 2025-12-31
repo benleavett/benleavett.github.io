@@ -3,986 +3,670 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadence</title>
-  <meta name="description" content="A mobile product practice built on rhythm, clarity, and dependable craft.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+  <title>Cadence - Software Product Development</title>
+  <meta name="description" content="Software product development and AI consulting. Building reliable, well-designed applications.">
   <style>
+    /* CSS Variables - Awwwards Style */
     :root {
       /* Fonts */
-      --font-body: 'Crimson Text', serif;
-      --font-heading: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      --font-button: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      --font-1: 'Inter Tight', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
       /* Font Weights */
-      --weight-regular: 400;
-      --weight-medium: 500;
-      --weight-semibold: 600;
+      --font-light: 300;
+      --font-normal: 400;
+      --font-medium: 500;
+      --font-bold: 600;
+      --font-extrabold: 700;
 
       /* Colors */
-      --color-yellow: #FFCC00;
-      --color-orange: #FF9933;
-      --color-red: #FF4444;
-      --color-burgundy: #8B2835;
-      --color-black: #000000;
-      --color-cream: #FFF8DC;
-      --color-turquoise: #50C4D4;
+      --color-primary: #222;
+      --color-primary-rgb: 34, 34, 34;
+      --color-white: #fff;
+      --color-orange: #FA5D29;
+      --color-orange-light: #FF9667;
+      --color-blue: #49B3FC;
+      --color-purple: #502bd8;
+      --color-green: #AAEEC4;
+      --color-yellow: #FFF083;
+
+      /* Backgrounds */
+      --bg-primary: #F8F8F8;
+      --bg-secondary: #EDEDED;
+      --bg-white: #fff;
+
+      /* Spacing */
+      --gutter: 20px;
+      --pad-inner: 52px;
+      --header-height: 54px;
+
+      /* Borders */
+      --rounded-small: 4px;
+      --rounded-normal: 8px;
+      --rounded-large: 16px;
     }
 
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: var(--font-body);
+    /* Base Styles */
+    html {
+      scroll-behavior: smooth;
+      font-size: 14px;
+    }
+
+    body {
+      font-family: var(--font-1);
+      font-size: 14px;
+      font-weight: var(--font-light);
+      background: var(--bg-primary);
+      color: var(--color-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: var(--font-bold);
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: var(--font-extrabold);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 2vw, 1.75rem);
     }
 
     p {
-      margin-bottom: 1.5rem;
-    }
-
-    /* Site Header */
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 2rem;
-      z-index: 1000;
-      background: transparent;
-    }
-
-    .site-header .header-logo {
-      width: 120px;
-      height: auto;
-    }
-
-    .header-btn {
-      display: inline-block;
-      padding: 0.875rem 2rem;
-      font-family: var(--font-button);
-      font-size: 0.875rem;
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      text-transform: uppercase;
-      color: var(--color-cream);
-      border: 2px solid var(--color-yellow);
-      border-radius: 4px;
-      background: transparent;
-      transition: all 0.3s ease;
-    }
-
-    .header-btn:hover {
-      background: var(--color-yellow);
-      color: var(--color-black);
-    }
-
-    /* Navigation */
-    .nav-bar {
-      position: fixed;
-      top: 2rem;
-      right: 2rem;
-      z-index: 1000;
-    }
-
-
-    .scroll-container {
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      scroll-behavior: smooth;
-    }
-
-    .scroll-section {
-      height: 100vh;
-      scroll-snap-align: start;
-      scroll-snap-stop: always;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .section-content {
-      text-align: center;
-      padding: 3rem;
-      max-width: 900px;
-      letter-spacing: 0.02em;
-    }
-
-    .section-3 .section-content {
-      max-width: 1400px;
-    }
-
-    /* Button Base */
-    .btn {
-      display: inline-block;
-      padding: 1.125rem 2.75rem;
-      font-family: var(--font-button);
-      font-size: 0.875rem;
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      border-radius: 4px;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      transition: color 0.4s ease;
-    }
-
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100%;
-      z-index: -1;
-      transition: width 0.4s ease;
-    }
-
-    .btn:hover::before {
-      width: 100%;
-    }
-
-    /* Primary Button (Yellow) */
-    .btn-primary {
-      color: var(--color-cream);
-      border: 2px solid var(--color-yellow);
-      text-transform: uppercase;
-    }
-
-    .btn-primary::before {
-      background: var(--color-yellow);
-    }
-
-    .btn-primary:hover {
-      color: var(--color-black);
-    }
-
-    /* Primary Button on Light Background */
-    .btn-primary-on-light {
-      color: var(--color-black);
-      border: 2px solid var(--color-yellow);
-      text-transform: uppercase;
-    }
-
-    .btn-primary-on-light::before {
-      background: var(--color-yellow);
-    }
-
-    .btn-primary-on-light:hover {
-      color: var(--color-black);
-    }
-
-    /* CTA Button spacing */
-    .cta-button {
-      margin-top: 2.5rem;
-    }
-
-    /* Section 1: Grey gradient background with Mont Ventoux */
-    .section-1 {
-      background: linear-gradient(135deg, #4f4f4f 0%, #1a1a1a 100%);
-      position: relative;
-      color: var(--color-cream);
-    }
-
-    .section-1::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('images/ventoux_sparse_line_drawing_v2.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      z-index: 0;
-    }
-
-    .section-1 .section-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-1 .logo {
-      width: 240px;
-      height: auto;
-      margin-bottom: 3rem;
-    }
-
-    .section-1 .tagline {
-      font-family: var(--font-body);
-      font-size: 1.75rem;
-      font-weight: var(--weight-regular);
-      letter-spacing: 0.05em;
-      line-height: 1.6;
-    }
-
-    /* Section 2: Dark gradient background */
-    .section-2 {
-      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-      color: var(--color-cream);
-      position: relative;
-    }
-
-    .section-2::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('images/app_ui_sparse_line_drawing.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      filter: invert(1);
-      opacity: 1;
-      z-index: 0;
-    }
-
-    .section-2 .section-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Section 3: Dark gradient background */
-    .section-3 {
-      background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-      color: var(--color-cream);
-      position: relative;
-    }
-
-    /* Section 2 heading and paragraph styles */
-    .section-2 h2 {
-      font-family: var(--font-heading);
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.02em;
-      color: var(--color-cream);
-      text-align: left;
-    }
-
-    .section-2 p {
-      font-family: var(--font-body);
-      font-size: 1.35rem;
+      margin-bottom: 1em;
       line-height: 1.8;
-      font-weight: var(--weight-regular);
-      max-width: 700px;
-      margin-left: 0;
-      margin-right: auto;
-      color: var(--color-cream);
-      text-align: left;
     }
 
-    .section-2 .section-content {
-      text-align: left;
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      transition: opacity 0.3s;
     }
 
-    .section-2 .cta-button {
-      display: block;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-      width: fit-content;
-    }
-
-    .who-we-are-content {
-      display: flex;
-      gap: 3rem;
-      align-items: center;
-      max-width: 1000px;
-      margin: 0 0 3rem 0;
-    }
-
-    .profile-photo {
-      flex: 0 0 200px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--color-yellow);
-      box-shadow: 0 0 30px rgba(255, 204, 0, 0.3);
-    }
-
-    .who-text {
-      flex: 1;
-    }
-
-    .who-text p {
-      margin-left: 0;
-      margin-right: 0;
-      text-align: left;
-    }
-
-    .company-logos {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 3rem;
-      margin: 3rem 0;
-      flex-wrap: wrap;
-      max-width: 900px;
-    }
-
-    .company-logos img {
-      height: 40px;
-      width: auto;
-      opacity: 0.8;
-      filter: brightness(0) invert(1);
-      transition: all 0.3s ease;
-    }
-
-    .company-logos img:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    /* Section 3 heading and paragraph styles */
-    .section-3 h2 {
-      font-family: var(--font-heading);
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.02em;
-      color: var(--color-cream);
-    }
-
-    .section-3 p {
-      font-family: var(--font-body);
-      font-size: 1.35rem;
-      line-height: 1.8;
-      font-weight: var(--weight-regular);
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--color-cream);
-    }
-
-    /* Timeline Section Layout */
-    .section-3 .section-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 3rem;
-    }
-
-    /* Timeline Layout */
-    .timeline-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .timeline-wrapper::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--color-yellow);
-      opacity: 0.4;
-      z-index: 0;
-    }
-
-    .section-3-title {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-3-title::before {
-      content: '';
-      width: 2px;
-      height: 80px;
-      background: var(--color-yellow);
-      opacity: 0.6;
-      flex-shrink: 0;
-    }
-
-    .section-3-title h2 {
-      margin: 0;
-      text-align: left;
-    }
-
-    .timeline-container {
-      display: flex;
-      gap: 3rem;
-      align-items: flex-start;
-      padding-left: 2rem;
-    }
-
-    .timeline {
-      flex: 0 0 300px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 1.5rem 0 1.5rem 2rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -2.1rem;
-      top: 2rem;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: rgba(255, 204, 0, 0.3);
-      border: 2px solid var(--color-yellow);
-      transition: all 0.3s ease;
-      z-index: 2;
-    }
-
-    .timeline-item.active::before {
-      background: var(--color-yellow);
-      border-color: var(--color-yellow);
-      width: 18px;
-      height: 18px;
-      left: -2.3rem;
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
-    }
-
-    .timeline-item:hover::before {
-      background: var(--color-orange);
-      border-color: var(--color-orange);
-    }
-
-    .timeline-item h3 {
-      font-family: var(--font-heading);
-      font-size: 1.25rem;
-      font-weight: var(--weight-semibold);
-      color: var(--color-cream);
-      margin-bottom: 0.5rem;
-      transition: color 0.3s ease;
-    }
-
-    .timeline-item.active h3 {
-      color: var(--color-yellow);
-    }
-
-    .timeline-item p {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      color: var(--color-cream);
+    a:hover {
       opacity: 0.7;
-      margin: 0;
     }
 
-    .timeline-content-wrapper {
-      flex: 1;
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--pad-inner);
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 20px;
+      }
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 8px;
+      z-index: 1000;
+      margin: 8px var(--pad-inner) 0;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        top: 0;
+        margin: 0;
+      }
+    }
+
+    .header__container {
       display: flex;
-      flex-direction: column;
-      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+      height: var(--header-height);
+      padding: 0 6px;
+      background: var(--bg-white);
+      border-radius: var(--rounded-normal);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
-    .timeline-content {
-      background: rgba(42, 42, 42, 0.5);
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 204, 0, 0.2);
-      backdrop-filter: blur(10px);
+    @media (max-width: 768px) {
+      .header__container {
+        border-radius: 0;
+      }
     }
 
-    .section-3-cta {
+    .header__logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 12px;
+      font-size: 18px;
+      font-weight: var(--font-bold);
+      letter-spacing: -0.02em;
+    }
+
+    .header__nav {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      height: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .header__nav {
+        gap: 8px;
+      }
+    }
+
+    .header__link {
+      display: flex;
+      align-items: center;
+      height: 42px;
+      padding: 0 16px;
+      border-radius: var(--rounded-normal);
+      font-weight: var(--font-medium);
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+
+    .header__link:hover {
+      background: var(--bg-secondary);
+      opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+      .header__link span {
+        display: none;
+      }
+      .header__link {
+        padding: 0 12px;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 42px;
+      padding: 0 24px;
+      background: var(--color-primary);
+      color: var(--bg-white);
+      border: none;
+      border-radius: var(--rounded-normal);
+      font-family: var(--font-1);
+      font-size: 14px;
+      font-weight: var(--font-medium);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--color-primary);
+      border: 1px solid rgba(var(--color-primary-rgb), 0.2);
+    }
+
+    .btn--outline:hover {
+      background: var(--bg-secondary);
+      border-color: var(--color-primary);
+    }
+
+    .btn--orange {
+      background: var(--color-orange);
+      color: var(--bg-white);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: clamp(60px, 10vw, 120px) 0;
       text-align: center;
-      margin-top: 2rem;
     }
 
-    .timeline-content h3 {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: var(--weight-semibold);
-      color: var(--color-yellow);
+    .hero__content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero__title {
       margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
     }
 
-    .timeline-content p {
-      font-family: var(--font-body);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: var(--color-cream);
-      margin-bottom: 1.5rem;
-    }
-
-    .timeline-content ul {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0;
-    }
-
-    .timeline-content li {
-      font-family: var(--font-body);
-      font-size: 1rem;
+    .hero__subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: var(--font-normal);
+      color: rgba(var(--color-primary-rgb), 0.7);
+      margin-bottom: 2.5rem;
       line-height: 1.6;
-      color: var(--color-cream);
-      padding-left: 1.5rem;
-      position: relative;
-      margin-bottom: 0.75rem;
     }
 
-    .timeline-content li::before {
+    .hero__cta {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Section */
+    .section {
+      padding: clamp(40px, 8vw, 100px) 0;
+    }
+
+    .section__header {
+      margin-bottom: clamp(30px, 5vw, 60px);
+    }
+
+    .section__title {
+      margin-bottom: 1rem;
+    }
+
+    .section__subtitle {
+      font-size: 1.1rem;
+      color: rgba(var(--color-primary-rgb), 0.6);
+      max-width: 700px;
+    }
+
+    /* Capabilities Grid */
+    .capabilities {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .capability {
+      padding: 32px;
+      background: var(--bg-white);
+      border-radius: var(--rounded-normal);
+      transition: all 0.3s;
+      border: 1px solid transparent;
+    }
+
+    .capability:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      border-color: rgba(var(--color-primary-rgb), 0.1);
+    }
+
+    .capability__icon {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 20px;
+      border-radius: var(--rounded-normal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: var(--font-bold);
+    }
+
+    .capability__icon--orange { background: var(--color-orange-light); color: var(--color-primary); }
+    .capability__icon--blue { background: var(--color-blue); color: var(--color-primary); }
+    .capability__icon--purple { background: var(--color-purple); color: var(--bg-white); }
+    .capability__icon--green { background: var(--color-green); color: var(--color-primary); }
+    .capability__icon--yellow { background: var(--color-yellow); color: var(--color-primary); }
+
+    .capability__title {
+      font-size: 1.25rem;
+      font-weight: var(--font-bold);
+      margin-bottom: 12px;
+    }
+
+    .capability__description {
+      font-size: 14px;
+      color: rgba(var(--color-primary-rgb), 0.7);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .capability__features {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .capability__features li {
+      padding: 6px 0;
+      padding-left: 20px;
+      position: relative;
+      color: rgba(var(--color-primary-rgb), 0.6);
+    }
+
+    .capability__features li:before {
       content: '→';
       position: absolute;
       left: 0;
       color: var(--color-orange);
-      font-weight: bold;
     }
 
-    .timeline-images {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
+    /* About Section */
+    .about {
+      background: var(--bg-white);
+      border-radius: var(--rounded-large);
+      padding: clamp(40px, 6vw, 80px);
+      margin: 0 var(--pad-inner);
     }
 
-    .timeline-images img {
-      flex: 1;
-      max-width: 48%;
-      height: auto;
-      border-radius: 4px;
-      object-fit: cover;
-    }
-
-    /* Section 4: Grey gradient background with trees */
-    .section-4 {
-      background: linear-gradient(135deg, #4f4f4f 0%, #1a1a1a 100%);
-      color: var(--color-cream);
-      position: relative;
-    }
-
-    .section-4::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url('images/trees_sparse_line_drawing.png');
-      background-repeat: no-repeat;
-      background-position: left center;
-      background-size: 60%;
-      filter: invert(1);
-      opacity: 1;
-      z-index: 0;
-    }
-
-    .section-4 .section-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-4 h2 {
-      font-family: var(--font-heading);
-      font-size: 3rem;
-      margin-bottom: 2.5rem;
-      font-weight: var(--weight-medium);
-      letter-spacing: 0.02em;
-      color: var(--color-cream);
-    }
-
-    .section-4 p {
-      font-family: var(--font-body);
-      font-size: 1.35rem;
-      line-height: 1.8;
-      font-weight: var(--weight-regular);
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: var(--color-cream);
-    }
-
-    /* Prevent hover states from persisting on touch devices */
-    @media (hover: none) {
-      .btn:hover::before {
-        width: 0;
-      }
-
-      .btn-primary:hover {
-        color: var(--color-cream);
-      }
-
-      .btn-primary-on-light:hover {
-        color: var(--color-black);
-      }
-
-      .header-btn:hover {
-        background: transparent;
-        color: var(--color-cream);
-      }
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .site-header {
-        padding: 1.5rem;
+      .about {
+        margin: 0 20px;
+        padding: 40px 24px;
       }
+    }
 
-      .site-header .header-logo {
-        width: 84px;
-      }
+    .about__content {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 48px;
+      align-items: start;
+      max-width: 1000px;
+    }
 
-      .header-btn {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.75rem;
+    @media (max-width: 768px) {
+      .about__content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
       }
+    }
 
-      .nav-bar {
-        top: 1.5rem;
-        right: 1.5rem;
-      }
+    .about__photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-orange-light);
+    }
 
-      .section-content {
-        padding: 2rem;
+    @media (max-width: 768px) {
+      .about__photo {
+        margin: 0 auto;
       }
+    }
 
-      .section-1 .logo {
-        width: 168px;
-        margin-bottom: 2rem;
-      }
+    .about__text h2 {
+      margin-bottom: 1.5rem;
+    }
 
-      .section-1 .tagline {
-        font-size: 1.25rem;
-        font-weight: var(--weight-regular);
-      }
+    .about__text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: rgba(var(--color-primary-rgb), 0.8);
+    }
 
-      .section-2 h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        font-weight: var(--weight-medium);
-        color: var(--color-cream);
-      }
+    .about__logos {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+      padding-top: 32px;
+      border-top: 1px solid var(--bg-secondary);
+    }
 
-      .section-2 p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        font-weight: var(--weight-regular);
-        color: var(--color-cream);
+    @media (max-width: 768px) {
+      .about__logos {
+        justify-content: center;
       }
+    }
 
-      .who-we-are-content {
-        flex-direction: column;
-        gap: 2rem;
-      }
+    .about__logo {
+      height: 32px;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+      filter: grayscale(100%);
+    }
 
-      .profile-photo {
-        flex: 0 0 150px;
-        width: 150px;
-        height: 150px;
-      }
+    .about__logo:hover {
+      opacity: 1;
+    }
 
-      .company-logos {
-        gap: 2rem;
-      }
+    /* Contact Section */
+    .contact {
+      text-align: center;
+      padding: clamp(60px, 10vw, 120px) 0;
+    }
 
-      .company-logos img {
-        height: 30px;
-      }
+    .contact__content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-      .section-3 h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        font-weight: var(--weight-medium);
-        color: var(--color-cream);
-      }
+    .contact__title {
+      margin-bottom: 1rem;
+    }
 
-      .section-3 p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        font-weight: var(--weight-regular);
-        color: var(--color-cream);
-      }
+    .contact__text {
+      font-size: 1.1rem;
+      color: rgba(var(--color-primary-rgb), 0.7);
+      margin-bottom: 1.5rem;
+    }
 
-      .section-3 .section-content {
-        padding: 2rem;
-      }
+    .contact__email {
+      font-size: 1.25rem;
+      font-weight: var(--font-medium);
+      margin-bottom: 2rem;
+      display: block;
+    }
 
-      .section-3-title::before {
-        height: 50px;
-      }
+    /* Footer */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--bg-secondary);
+      font-size: 13px;
+      color: rgba(var(--color-primary-rgb), 0.5);
+    }
 
-      .timeline-wrapper::before {
-        left: 0;
-      }
+    /* Utilities */
+    .text-center {
+      text-align: center;
+    }
 
-      .timeline-container {
-        flex-direction: column;
-        gap: 2rem;
-        padding-left: 1.5rem;
-      }
+    .mb-1 { margin-bottom: 1rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .mb-3 { margin-bottom: 3rem; }
 
-      .timeline {
-        flex: 1;
-      }
-
-      .timeline-item {
-        padding: 1rem 0 1rem 1.5rem;
-      }
-
-      .timeline-item::before {
-        left: -1.6rem;
-      }
-
-      .timeline-item.active::before {
-        left: -1.8rem;
-      }
-
-      .timeline-item h3 {
-        font-size: 1.1rem;
-      }
-
-      .timeline-content {
-        padding: 1.5rem;
-      }
-
-      .timeline-content h3 {
-        font-size: 1.5rem;
-      }
-
-      .timeline-content p {
-        font-size: 1rem;
-      }
-
-      .timeline-images {
-        flex-direction: column;
-      }
-
-      .timeline-images img {
-        max-width: 100%;
-      }
-
-      .section-4 h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-        font-weight: var(--weight-medium);
-        color: var(--color-cream);
-      }
-
-      .section-4 p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        font-weight: var(--weight-regular);
-        color: var(--color-cream);
-      }
-
-      .btn {
-        padding: 1rem 2.25rem;
-        font-size: 0.8rem;
-      }
-
-      .cta-button {
-        margin-top: 2rem;
-      }
+    /* Load Inter Tight Font */
+    @font-face {
+      font-family: 'Inter Tight';
+      src: url('https://assets.awwwards.com/assets/fonts/inter-tight/InterTight-VariableFont_wght.ttf') format('truetype');
+      font-weight: 100 900;
+      font-display: swap;
     }
   </style>
 </head>
 <body>
-  <!-- Site Header -->
-  <header class="site-header">
-    <img src="images/cadence-logo-white-1.png" alt="Cadence" class="header-logo">
-    <a href="#contact" class="header-btn">Contact Us</a>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        Cadence
+      </div>
+      <nav class="header__nav">
+        <a href="#capabilities" class="header__link">
+          <span>Capabilities</span>
+        </a>
+        <a href="#about" class="header__link">
+          <span>About</span>
+        </a>
+        <a href="#contact" class="btn btn--orange">
+          Contact
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Navigation -->
-  <nav class="nav-bar">
-  </nav>
-
-  <div class="scroll-container">
-    <!-- Section 1 -->
-    <section class="scroll-section section-1">
-      <div class="section-content">
-        <img src="images/cadence-logo-white-1.png" alt="Cadence Logo" class="logo">
-        <p class="tagline">Software product development and AI consulting</p>
-        <a href="#what-we-can-do" class="btn btn-primary cta-button">What We Can Do</a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">Software Product Development & AI Consulting</h1>
+        <p class="hero__subtitle">
+          Building reliable, well-designed applications that suit your needs. Over 15 years of experience creating products for companies of all sizes.
+        </p>
+        <div class="hero__cta">
+          <a href="#capabilities" class="btn">Explore Capabilities</a>
+          <a href="#contact" class="btn btn--outline">Get in Touch</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 2: What We Can Do -->
-    <section id="what-we-can-do" class="scroll-section section-3">
-      <div class="section-content">
-        <div class="timeline-wrapper">
-          <div class="section-3-title">
-            <h2>What We Can Do</h2>
-          </div>
-          <div class="timeline-container">
-            <div class="timeline">
-              <div class="timeline-item active" data-capability="mobile">
-                <h3>Mobile App Development</h3>
-                <p>Native & cross-platform</p>
-              </div>
-              <div class="timeline-item" data-capability="web">
-                <h3>Web Applications</h3>
-                <p>Modern, scalable solutions</p>
-              </div>
-              <div class="timeline-item" data-capability="ai">
-                <h3>AI Integration</h3>
-                <p>Intelligence in your apps</p>
-              </div>
-              <div class="timeline-item" data-capability="consulting">
-                <h3>Technical Consulting</h3>
-                <p>Expert guidance & strategy</p>
-              </div>
-              <div class="timeline-item" data-capability="product">
-                <h3>Product Development</h3>
-                <p>From concept to launch</p>
-              </div>
-            </div>
-            <div class="timeline-content-wrapper">
-              <div class="timeline-content" id="capability-content">
-                <!-- Content will be loaded by JavaScript -->
-              </div>
-              <div class="section-3-cta">
-                <a href="#who-we-are" class="btn btn-primary cta-button">Who We Are</a>
-              </div>
-            </div>
+  <!-- Capabilities Section -->
+  <section id="capabilities" class="section">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="section__title">What We Can Do</h2>
+        <p class="section__subtitle">
+          End-to-end product development expertise across mobile, web, and AI technologies.
+        </p>
+      </div>
+
+      <div class="capabilities">
+        <!-- Mobile Development -->
+        <div class="capability">
+          <div class="capability__icon capability__icon--orange">📱</div>
+          <h3 class="capability__title">Mobile App Development</h3>
+          <p class="capability__description">
+            Build native iOS and Android applications or leverage cross-platform frameworks for faster deployment.
+          </p>
+          <ul class="capability__features">
+            <li>Cross-platform (iOS & Android) with React Native & Flutter</li>
+            <li>App Store & Play Store deployment</li>
+            <li>Integration with backend services and APIs</li>
+          </ul>
+        </div>
+
+        <!-- Web Development -->
+        <div class="capability">
+          <div class="capability__icon capability__icon--blue">💻</div>
+          <h3 class="capability__title">Web Applications</h3>
+          <p class="capability__description">
+            Modern, responsive web applications built with the latest frameworks and technologies.
+          </p>
+          <ul class="capability__features">
+            <li>React, Vue, and Next.js development</li>
+            <li>Progressive Web Apps (PWAs)</li>
+            <li>RESTful API and GraphQL integration</li>
+            <li>Real-time features with WebSockets</li>
+            <li>Cloud deployment and DevOps</li>
+          </ul>
+        </div>
+
+        <!-- AI Integration -->
+        <div class="capability">
+          <div class="capability__icon capability__icon--purple">🤖</div>
+          <h3 class="capability__title">AI Integration</h3>
+          <p class="capability__description">
+            Incorporate artificial intelligence into your applications to unlock new capabilities.
+          </p>
+          <ul class="capability__features">
+            <li>Large Language Model (LLM) integration</li>
+            <li>Natural language processing</li>
+            <li>Computer vision and image recognition</li>
+            <li>Recommendation systems</li>
+            <li>Custom AI model development</li>
+          </ul>
+        </div>
+
+        <!-- Consulting -->
+        <div class="capability">
+          <div class="capability__icon capability__icon--green">💡</div>
+          <h3 class="capability__title">Technical Consulting</h3>
+          <p class="capability__description">
+            Expert guidance on technology strategy, architecture decisions, and product roadmaps.
+          </p>
+          <ul class="capability__features">
+            <li>Technology stack assessment</li>
+            <li>Architecture design and review</li>
+            <li>Code audits and quality assessments</li>
+            <li>Team mentoring and training</li>
+            <li>Project rescue and optimization</li>
+          </ul>
+        </div>
+
+        <!-- Product Development -->
+        <div class="capability">
+          <div class="capability__icon capability__icon--yellow">🚀</div>
+          <h3 class="capability__title">Product Development</h3>
+          <p class="capability__description">
+            End-to-end product development from concept through design, development, and launch.
+          </p>
+          <ul class="capability__features">
+            <li>Product strategy and roadmapping</li>
+            <li>UX/UI design and prototyping</li>
+            <li>Agile development methodology</li>
+            <li>Quality assurance and testing</li>
+            <li>Launch planning and support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="about">
+      <div class="about__content">
+        <img src="images/ben.png" alt="Ben Leavett" class="about__photo">
+        <div class="about__text">
+          <h2>Who We Are</h2>
+          <p>
+            Software product development and AI consulting. Start your digital journey with software built by someone who takes the time to understand your needs.
+          </p>
+          <p>
+            Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.
+          </p>
+          <div class="about__logos">
+            <img src="images/microsoft-logo.svg" alt="Microsoft" class="about__logo" onerror="this.style.display='none'">
+            <img src="images/swiftkey-logo.png" alt="SwiftKey" class="about__logo" onerror="this.style.display='none'">
+            <img src="images/glovo-logo.png" alt="Glovo" class="about__logo" onerror="this.style.display='none'">
+            <img src="images/doccla-logo.png" alt="Doccla" class="about__logo" onerror="this.style.display='none'">
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 3: Who We Are -->
-    <section id="who-we-are" class="scroll-section section-2">
-      <div class="section-content">
-        <h2>Who We Are</h2>
-        <div class="who-we-are-content">
-          <img src="images/ben.png" alt="Ben Leavett" class="profile-photo">
-          <div class="who-text">
-            <p>Software product development and AI consulting. Start your digital journey with software built by someone who takes the time to understand your needs.</p>
-            <p>Led by Ben Leavett, a product builder and software engineer with over 15 years of experience working with tech companies of all shapes and sizes.</p>
-          </div>
-        </div>
-        <div class="company-logos">
-          <img src="images/microsoft-logo.svg" alt="Microsoft" onerror="this.style.display='none'">
-          <img src="images/swiftkey-logo.png" alt="SwiftKey" onerror="this.style.display='none'">
-          <img src="images/glovo-logo.png" alt="Glovo" onerror="this.style.display='none'">
-          <img src="images/doccla-logo.png" alt="Doccla" onerror="this.style.display='none'">
-        </div>
-        <a href="#contact" class="btn btn-primary cta-button">Get in Touch</a>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact__content">
+        <h2 class="contact__title">Get in Touch</h2>
+        <p class="contact__text">
+          Ready to discuss your project? Let's talk about how we can help bring your ideas to life.
+        </p>
+        <a href="mailto:benleavett@gmail.com" class="contact__email">
+          benleavett@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/bleavett/" class="btn btn--orange" target="_blank">
+          Connect on LinkedIn
+        </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Section 4 - Contact -->
-    <section id="contact" class="scroll-section section-4">
-      <div class="section-content">
-        <h2>Get in Touch</h2>
-        <p>Ready to discuss your project? Let's talk.</p>
-        <p>benleavett at gmail dot com</p>
-        <a href="https://www.linkedin.com/in/bleavett/" class="btn btn-primary cta-button" target="_blank">Connect on LinkedIn</a>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    // Timeline Capability Switching
-    const capabilityContent = {
-      mobile: {
-        title: 'Mobile App Development',
-        description: 'Build native iOS and Android applications or leverage cross-platform frameworks for faster deployment. From consumer apps to enterprise solutions.',
-        features: [
-          'Cross-platform (iOS & Android) with React Native & Flutter',
-          'App Store & Play Store deployment',
-          'Integration with backend services and APIs'
-        ]
-      },
-      web: {
-        title: 'Web Applications',
-        description: 'Modern, responsive web applications built with the latest frameworks and technologies. Scalable architecture designed for growth.',
-        features: [
-          'React, Vue, and Next.js development',
-          'Progressive Web Apps (PWAs)',
-          'RESTful API and GraphQL integration',
-          'Real-time features with WebSockets',
-          'Cloud deployment and DevOps'
-        ]
-      },
-      ai: {
-        title: 'AI Integration',
-        description: 'Incorporate artificial intelligence into your applications to unlock new capabilities and enhance user experiences.',
-        features: [
-          'Large Language Model (LLM) integration',
-          'Natural language processing',
-          'Computer vision and image recognition',
-          'Recommendation systems',
-          'Custom AI model development and training'
-        ]
-      },
-      consulting: {
-        title: 'Technical Consulting',
-        description: 'Expert guidance on technology strategy, architecture decisions, and product roadmaps to help you make informed choices.',
-        features: [
-          'Technology stack assessment and recommendations',
-          'Architecture design and review',
-          'Code audits and quality assessments',
-          'Team mentoring and training',
-          'Project rescue and optimization'
-        ]
-      },
-      product: {
-        title: 'Product Development',
-        description: 'End-to-end product development from initial concept through design, development, testing, and launch.',
-        features: [
-          'Product strategy and roadmapping',
-          'UX/UI design and prototyping',
-          'Agile development methodology',
-          'Quality assurance and testing',
-          'Launch planning and support'
-        ]
-      }
-    };
-
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const contentPanel = document.getElementById('capability-content');
-
-    function updateContent(capability) {
-      const content = capabilityContent[capability];
-
-      const featuresList = content.features.map(f => `<li>${f}</li>`).join('');
-
-      contentPanel.innerHTML = `
-        <h3>${content.title}</h3>
-        <p>${content.description}</p>
-        <ul>
-          ${featuresList}
-        </ul>
-      `;
-    }
-
-    timelineItems.forEach(item => {
-      item.addEventListener('click', () => {
-        // Remove active class from all items
-        timelineItems.forEach(i => i.classList.remove('active'));
-
-        // Add active class to clicked item
-        item.classList.add('active');
-
-        // Update content panel
-        const capability = item.getAttribute('data-capability');
-        updateContent(capability);
-      });
-    });
-
-    // Load default content on page load
-    updateContent('mobile');
-  </script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Cadence. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
